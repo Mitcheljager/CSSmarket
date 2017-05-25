@@ -17,6 +17,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 
+gem 'wdm', '~> 0.1.0' if Gem.win_platform?
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end

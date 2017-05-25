@@ -1,0 +1,28 @@
+@mixin mediaquery($size){
+  $query: map-get($breakpoints, $size);
+
+  @media #{$query}{
+    @content;
+  }
+}
+
+@mixin maxwidth($top: 0, $bottom: $top, $size: $max-width) {
+  margin: 0 auto;
+  padding: $top 10px $bottom;
+
+  @media (min-width: $size + 40) {
+    padding: $top calc((100vw - #{$size}) / 2) $bottom;
+  }
+}
+
+@mixin flexibleFontSize($size: 10, $min-width: 560px) {
+  font-size: round($min-width * ($size / 100));
+
+  @media (min-width: $min-width) {
+    font-size: #{$size}vw;
+  }
+
+  @include mediaquery("max-width") {
+    font-size: round($max-width * ($size / 100));
+  }
+}

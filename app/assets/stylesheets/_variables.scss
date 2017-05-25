@@ -1,0 +1,11 @@
+// Sizes
+$max-width: 1280px;
+
+$breakpoints: (
+  "mobile":           "(min-width: 460px)",
+  "mobile-large":     "(min-width: 580px)",
+  "tablet":           "(min-width: 768px)",
+  "desktop":          "(min-width: 1024px)",
+  "desktop-large":    "(min-width: 1200px)",
+  "max-width":        "(min-width: #{$max-width})"
+);

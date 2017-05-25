@@ -1,0 +1,9 @@
+<section class="content">
+  <div class="posts">
+    <% @posts.each do |post| %>
+      <%= render "post", post: post %>
+    <% end %>
+  </div>
+</section>
+
+<%= link_to 'New Post', new_post_path %>

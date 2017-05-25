@@ -1,0 +1,7 @@
+<h1>Post Search</h1>
+
+<div class="posts">
+  <% @posts.each do |post| %>
+    <%= render "posts/post", post: post %>
+  <% end %>
+</div>

@@ -14,6 +14,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 
+gem 'high_voltage', '~> 3.0.0'
+
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 

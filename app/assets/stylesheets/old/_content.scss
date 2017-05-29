@@ -1,0 +1,134 @@
+.projects{
+  margin-top: 40px;
+  .project{
+    height:248px;
+    background:#eceff1;
+    border-radius:5px;
+    overflow: hidden;
+    position: relative;
+    .overlay{
+      background: $darkBlue;
+      width:100%;
+      height: 100%;
+      position: absolute;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: center;
+      -webkit-align-items: center;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      cursor: pointer;
+      @include transitionOne(opacity 0.3s ease);
+      i{
+        color:$white;
+        font-size:50px;
+      }
+      &:hover{
+        opacity: 0.85;
+      }
+    }
+  }
+  .projectMargin{
+    margin-bottom: 50px;
+    @media screen and (max-width: 1010px){
+      width: 33.33333%;
+    }
+    @media screen and (max-width: 670px){
+      width: 50%;
+    }
+    @media screen and (max-width: 420px){
+      width: 100%;
+    }
+  }
+  .about{
+    float:left;
+    position: relative;
+    margin-top: 20px;
+    .add{
+      overflow: hidden;
+      font-weight: 600;
+      font-size:14px;
+      border: 2px solid $pink;
+      color:$pink;
+      border-radius:3px;
+      text-decoration: none;
+      padding: 7px 5px;
+      width: 68px;
+      text-align: center;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 5px;
+      @include transitionTwo(background 0.3s ease, color 0.3s ease);
+      &:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        @include orangePinkGradient();
+        transition: opacity 0.5s ease-out;
+        z-index: 2;
+        opacity: 0;
+      }
+      span.price{
+        position: relative;
+        z-index:4;
+        @include transitionTwo(transform 0.3s ease, opacity 0.3s ease);
+      }
+      span.text{
+        z-index:4;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        transform: scale(2);
+        opacity:0;
+        @include transitionTwo(transform 0.3s ease, opacity 0.3s ease);
+      }
+      &:hover{
+        color: $white;
+        &:after{
+          opacity:1;
+        }
+        span.price{
+          transform: scale(0.2);
+          opacity:0;
+        }
+        span.text{
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+    }
+    .name{
+      font-weight: 600;
+      font-size:16px;
+      color:$darkBlue;
+      float:left;
+      width: calc(100% - 75px);
+      margin-bottom: 2px;
+      overflow:hidden;
+      display:inline-block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .pack{
+      font-weight: 300;
+      font-size:14px;
+      color:$darkBlue;
+      float:left;
+      width: calc(100% - 75px);
+      overflow:hidden;
+      display:inline-block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  .seeMore{
+    text-align: center;
+  }
+}

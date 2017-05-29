@@ -1,6 +1,8 @@
 // Helpers
 @import "variables",
-        "mixins";
+        "mixins",
+        "functions",
+        "animations";
 
 // General classes
 @import "general/general";
@@ -13,3 +15,16 @@
 // Specific elements
 @import "elements/posts",
         "elements/form";
+
+//Pages
+@import "old/all";
+@import "old/index";
+@import "old/content";
+@import "old/browse";
+@import "old/popup";
+@import "old/article";
+@import "old/cart";
+@import "old/svg";
+
+//Dashboard
+@import "old/dashboard";

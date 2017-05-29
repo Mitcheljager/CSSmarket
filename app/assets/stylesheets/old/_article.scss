@@ -1,0 +1,62 @@
+#articleContent{
+  background-color: #eceff1;
+  &.imageBackground{
+    background: url('../img/sellBg.jpg') bottom repeat-x;
+    background-color: #eceff1;
+    padding-bottom: 350px;
+  }
+  .flex{
+    -webkit-display: flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  .spacing{
+    margin-top: 50px;
+  }
+  a.soonMobileButton{
+    float: left;
+    border: 0px solid #df468f;
+    border-radius: 3px;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #ffffff;
+    @include orangePinkGradient();
+    font-size: 16px;
+    width: 100%;
+    max-width: 420px; // old 320px;
+    display: none;
+    border-bottom: 2px solid #b33b61;
+    @media screen and (max-width: 970px){
+      display: block;
+    }
+    .content{
+      padding: 12px 20px;
+      float: left;
+      width: calc(100% - 65px);
+
+      .big{
+        float: left;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .small{
+        float: left;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 400;
+        margin-top: -3px;
+      }
+    }
+    .percentage{
+      float: left;
+      height: 69px;
+      justify-content: center;
+      align-items: center;
+      @include addFlex();
+      font-size: 25px;
+      width: 65px;
+    }
+  }
+}

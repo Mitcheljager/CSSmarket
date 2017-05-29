@@ -1,0 +1,49 @@
+h3.filters{
+  margin-top:25px;
+  margin-bottom: 15px;
+}
+
+.tags{
+  margin-top: 25px;
+  ul{
+    list-style-type: none;
+    li{
+      display: inline-block;
+      a{
+        text-decoration: none;
+        color:$white;
+        font-weight: 700;
+        font-size:11px;
+        opacity: 0.3;
+        text-transform: uppercase;
+        padding-left:10px;
+        padding-right: 10px;
+        @include transitionOne(opacity 0.3s ease);
+        &.active{
+          opacity: 1;
+          span{
+            opacity: 1;
+          }
+        }
+        &.allActive{
+          opacity: 1;
+          span{
+            opacity: 1;
+          }
+        }
+        span{
+          border-radius: 100%;
+          display: inline-block;
+          position: relative;
+          top: -2px;
+          margin-right: 5px;
+          width: 5px;
+          height: 5px;
+          @include orangePinkGradient();
+          opacity: 0;
+          @include transitionOne(opacity 0.3s ease);
+        }
+      }
+    }
+  }
+}

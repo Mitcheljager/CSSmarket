@@ -1,0 +1,5 @@
+.button {
+  &--gradient {
+    @include button(0, map-get($color, "white"), "true");
+  }
+}

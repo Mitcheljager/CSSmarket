@@ -4,7 +4,7 @@
 
 html,
 body {
-  font-family: sans-serif, Helvetica;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   margin: 0;
   padding: 0;
@@ -12,6 +12,13 @@ body {
   @include mediaquery("tablet") {
     font-size: 16px;
   }
+}
+
+.row {
+  width: 100%;
+  max-width: $max-width;
+  display: block;
+  margin: 0px auto;
 }
 
 a {

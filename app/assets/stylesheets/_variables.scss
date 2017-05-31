@@ -1,29 +1,23 @@
-$max-width: 1280px;
+$max-width: 1200px;
 
 $breakpoints: (
   "mobile":           "(min-width: 460px)",
   "mobile-large":     "(min-width: 580px)",
   "tablet":           "(min-width: 768px)",
   "desktop":          "(min-width: 1024px)",
-  "desktop-large":    "(min-width: 1200px)",
   "max-width":        "(min-width: #{$max-width})"
 );
 
-//So wrong we have to change it later to better code. All the old scss ;)
-$darkBlue: #1e213d;
-$lightBlue: #262942;
-$hoverBlue: #303555;
-$popupHeader: #303454;
-$h3color: #8e91a8;
-$h1color: #292c47;
-$white: #ffffff;
-$grey: #eceff1;
-$green: #39b54a;
+$color: (
+  "white": #ffffff,
+  "black": #000000,
+  "brand-primary": #1e213d,
+  "brand-primary-second": #262942,
+  "brand-primary-third": #303454,
+  "brand-secondary": #f35b48,
+  "brand-secondary-second": #e04095,
+);
 
-$orange: #f35b48;
-$pink: #e04095;
-
-$headerHeight: 279px;
-$menuHeight: 94px;
-
-$footerSellHeight: 425px;
+$element: (
+  "header-height": 79px,
+);

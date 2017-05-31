@@ -1,42 +1,26 @@
-<section id="headerTop">
-    <div class="wrapper">
-        <div class="c50">
-            <a href="/" class="logo left" title="cssmarket"><%= image_tag('logo.png') %></a>
-            <a href="#" class="topMenu left">About</a>
-            <a href="#" class="topMenu left">Sell</a>
-        </div>
-        <div class="c50">
-            <a href="#" class="cart right">Cart (0)</a>
-            <a href="/cssmarket/user/logout.php" class="user right">Signout</a>
-            <a href="#" class="user right">Username</a>
-            <a href="#" class="login right">Login / Register</a>
-        </div>
-    </div>
-</section>
+<header class="header">
+  <div class="header__column">
+    <%= image_tag("logo.png") %>
+    <a href="#" class="header__link">About</a>
+    <a href="#" class="header__link">Sell</a>
+  </div>
+  <div class="header__column">
+    <a href="#" class="header__link">Login / Registar</a>
+    <a href="#" class="button button--gradient">cart (1)</a>
+  </div>
+</header>
 
-<section id="headerBottom">
-    <div class="wrapper">
-        <menu class="c100">
-            <ul>
-                <li>
-                    <a href="#">
-                        <span class="top"><i class="demo-icon icon-icon4"></i></span>
-                        <span class="bottom">Menus</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="active">
-                        <span class="top"><i class="demo-icon icon-icon3"></i></span>
-                        <span class="bottom">Buttons</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="top"><i class="demo-icon icon-icon1-2"></i></span>
-                        <span class="bottom">Forms</span>
-                    </a>
-                </li>
-            </ul>
-        </menu>
-    </div>
-</section>
+<nav class="menu">
+  <a class="menu__link" href="#">
+    <i class="menu__icon material-icons">track_changes</i>
+    <span class="menu__label">Buttons</span>
+  </a>
+  <a class="menu__link menu__link--is-active" href="#">
+    <i class="menu__icon material-icons">fingerprint</i>
+    <span class="menu__label">Menus</span>
+  </a>
+  <a class="menu__link" href="#">
+    <i class="menu__icon material-icons">visibility</i>
+    <span class="menu__label">Forms</span>
+  </a>
+</nav>

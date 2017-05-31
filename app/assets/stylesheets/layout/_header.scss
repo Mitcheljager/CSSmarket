@@ -19,8 +19,9 @@
   color: map-get($color, "white");
   text-transform: uppercase;
   text-decoration: none;
+  letter-spacing: 1px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 25px 0 0;
 
   &:first-of-type {

@@ -1,16 +1,32 @@
 <header class="header">
   <div class="header__column">
-    <%= image_tag("logo.png") %>
-    <a href="#" class="header__link">About</a>
-    <a href="#" class="header__link">Sell</a>
+    <%= image_tag("logoCSSmarket.png", class: "header__logo") %>
+    <!-- tablet and higher -->
+    <a href="#" class="header__link header__link--tablet">About</a>
+    <a href="#" class="header__link header__link--tablet">Sell</a>
   </div>
   <div class="header__column">
-    <a href="#" class="header__link">Login / Registar</a>
-    <a href="#" class="button button--gradient">cart (1)</a>
+    <!-- mobile -->
+    <a href="#" class="header__link">
+      <i class="header__icon material-icons">shopping_cart</i>
+      <span class="icon__label">2</span>
+    </a>
+    <a href="#" class="header__link">
+      <i class="header__icon header__icon--mobile-menu material-icons">menu</i>
+    </a>
+    <!-- tablet and higher -->
+    <a href="#" class="header__link header__link--tablet">Login / Register</a>
+    <a href="#" class="button button--gradient header__link--tablet">cart (1)</a>
   </div>
 </header>
 
+<section class="overlay"></section>
+
 <nav class="menu">
+  <span class="menu__link menu__link--seller">
+    <span class="menu__label">Become a seller</span>
+    <a href="#" class="button button--white">Start selling</a>
+  </span>
   <a class="menu__link" href="#">
     <i class="menu__icon material-icons">track_changes</i>
     <span class="menu__label">Buttons</span>
@@ -23,4 +39,28 @@
     <i class="menu__icon material-icons">visibility</i>
     <span class="menu__label">Forms</span>
   </a>
+  <a class="menu__link" href="#">
+    <i class="menu__icon material-icons">track_changes</i>
+    <span class="menu__label">Buttons</span>
+  </a>
+  <a class="menu__link" href="#">
+    <i class="menu__icon material-icons">fingerprint</i>
+    <span class="menu__label">Menus</span>
+  </a>
+  <a class="menu__link" href="#">
+    <i class="menu__icon material-icons">visibility</i>
+    <span class="menu__label">Forms</span>
+  </a>
+  <a class="menu__link" href="#">
+    <i class="menu__icon material-icons">track_changes</i>
+    <span class="menu__label">Buttons</span>
+  </a>
+  <a class="menu__link" href="#">
+    <i class="menu__icon material-icons">fingerprint</i>
+    <span class="menu__label">Menus</span>
+  </a>
+
+  <div class="menu__login">
+    <a href="#" class="menu__link menu__link--extra">Login / Register</a>
+  </div>
 </nav>

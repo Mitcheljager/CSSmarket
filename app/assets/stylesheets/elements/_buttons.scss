@@ -2,4 +2,8 @@
   &--gradient {
     @include button(0, map-get($color, "white"), "true");
   }
+
+  &--white {
+    @include button(map-get($color, "white"), map-get($color, "brand-secondary-second"), "false");
+  }
 }

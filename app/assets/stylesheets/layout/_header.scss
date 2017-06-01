@@ -7,12 +7,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include mediaquery("tablet") {
+    height: map-get($element, "header-height") + 20;
+  }
 }
 
 .header__column {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.header__logo {
+  width: 100%;
+  max-width: 164px;
+  height: auto;
 }
 
 .header__link {
@@ -22,9 +32,37 @@
   letter-spacing: 1px;
   font-size: 13px;
   font-weight: 700;
-  margin: 0 25px 0 0;
+  margin: 0 0 0 25px;
+  position: relative;
 
-  &:first-of-type {
-    margin: 0 25px;
+  &--tablet {
+    display: none;
+    margin: 0 25px 0 0;
+
+    &:first-of-type {
+      margin: 0 25px;
+    }
   }
+
+  @include mediaquery("tablet") {
+    display: none;
+
+    &--tablet {
+      display: block;
+    }
+  }
+}
+
+.icon__label {
+  position: absolute;
+  top: -7px;
+  left: 13px;
+  @include linear-gradient-b(45deg, rgba(map-get($color, "brand-secondary"), 1), rgba(map-get($color, "brand-secondary-second"), 1));
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
 }

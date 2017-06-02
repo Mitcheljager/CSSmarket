@@ -67,7 +67,7 @@
   text-decoration: none;
   font-size: 13px;
   font-weight: 300;
-  transition: all 300ms ease;
+  transition: background 300ms ease, color 300ms ease;
   width: 100%;
   height: map-get($element, "header-height");
   float: left;

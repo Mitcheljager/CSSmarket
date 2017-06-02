@@ -1,51 +1,42 @@
-.project {
+.projects {
   @include maxwidth(18px);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.project__title {
+.projects__parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.projects__title {
   color: darken(map-get($color, "light-grey"), 35%);
   margin-bottom: 15px;
   width: 100%;
   text-align: left;
 }
 
-.project__item {
+.projects__more {
+  margin-top: 20px;
   float: left;
-  width: 100%;
+}
+
+.project {
   flex: 0 0 calc(50% - 10px);
+  min-height: 100px;
   margin: map-get($element, "project-spacing") 0;
 
-  // &:nth-child(2n) {
-  //   padding: 0 0 0 map-get($element, "project-spacing");
-  // }
-  //
-  // &:nth-child(2n+1) {
-  //   padding: 0 map-get($element, "project-spacing") 0 0;
-  // }
-  //
-  // @include mediaquery("mobile-large") {
-  //   width: 33.33333%;
-  //   padding: 0 calc(#{map-get($element, "project-spacing")} / 2);
-  //
-  //   &:nth-child(2n) {
-  //     padding: 0 calc(#{map-get($element, "project-spacing")} / 2);
-  //   }
-  //
-  //   &:nth-child(2n+1) {
-  //     padding: 0 calc(#{map-get($element, "project-spacing")} / 2);
-  //   }
-  //
-  //   &:nth-child(3n) {
-  //     padding: 0 0 0 map-get($element, "project-spacing");
-  //   }
-  //
-  //   &:nth-child(3n+1) {
-  //     padding: 0 map-get($element, "project-spacing") 0 0;
-  //   }
-  // }
+  @include mediaquery("mobile-large") {
+    flex: 0 0 calc(33.33% - 10px);
+  }
+
+  @media (min-width: 940px) {
+    flex: 0 0 calc(25% - 10px);
+  }
 }
 
 .project__image {
@@ -97,9 +88,4 @@
   border: 2px solid map-get($color, "brand-secondary-second");
   padding: 4px 0px;
   border-radius: 3px;
-}
-
-.project__more {
-  margin-top: 20px;
-  float: left;
 }

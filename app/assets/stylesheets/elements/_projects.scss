@@ -26,18 +26,19 @@
 
 .project {
   min-height: 100px;
-  margin: map-get($element, "project-spacing") 0;
+
+  $gutter: 20px;
 
   @media (max-width: 640px) {
-    @include griddify(2, 10px);
+    @include griddify(2, $gutter);
   }
 
  @media (min-width: 641px) and (max-width: $max-width) {
-    @include griddify(3, 10px);
+    @include griddify(3, $gutter);
   }
 
   @media (min-width: $max-width + 1) {
-    @include griddify(4, 10px);
+    @include griddify(4, $gutter);
   }
 }
 

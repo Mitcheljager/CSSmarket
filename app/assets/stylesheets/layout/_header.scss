@@ -1,5 +1,9 @@
 .header {
   @include maxwidth(0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: map-get($element, "header-height");
   background: map-get($color, "brand-primary");
   color: map-get($color, "white");
@@ -9,6 +13,7 @@
   align-items: center;
 
   @include mediaquery("tablet") {
+    position: relative;
     height: map-get($element, "header-height") + 20;
   }
 }

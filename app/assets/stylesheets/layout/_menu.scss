@@ -95,6 +95,11 @@
       margin-bottom: 0;
       border-left: 1px solid darken(map-get($color, "brand-primary"), 2%);
     }
+
+    &:hover,
+    &:active {
+      background: darken(map-get($color, "brand-primary"), 2%);
+    }
   }
 
   &--seller {
@@ -110,6 +115,11 @@
 
     &:last-of-type {
       margin-bottom: 0;
+    }
+
+    &:hover,
+    &:active {
+      @include linear-gradient-b(45deg, rgba(map-get($color, "brand-secondary"), 1), rgba(map-get($color, "brand-secondary-second"), 1));
     }
 
     .button {
@@ -138,6 +148,14 @@
 .menu__icon {
   font-size: 30px;
   padding: 0 15px 0 0;
+
+  &--close {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    color: map-get($color, "white");
+    font-size: 24px;
+  }
 
   @include mediaquery("tablet") {
     padding: 0 0 5px 0;

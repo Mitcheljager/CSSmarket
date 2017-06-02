@@ -65,7 +65,7 @@
   }
 
   flex: 0 0 calc(100% / #{$grid} - #{$gutter});
-  margin: 0 5px $gutter;
+  margin: 0 $gutter / 2 $gutter;
 
   @for $i from 1 through $grid {
     $key: $key + 1;

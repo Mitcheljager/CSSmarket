@@ -9,7 +9,6 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
   width: 100%;
 }
 
@@ -26,16 +25,19 @@
 }
 
 .project {
-  flex: 0 0 calc(50% - 10px);
   min-height: 100px;
   margin: map-get($element, "project-spacing") 0;
 
-  @include mediaquery("mobile-large") {
-    flex: 0 0 calc(33.33% - 10px);
+  @media (max-width: 640px) {
+    @include griddify(2, 10px);
   }
 
-  @media (min-width: 940px) {
-    flex: 0 0 calc(25% - 10px);
+ @media screen and (min-width: 641px) and (max-width: $max-width) {
+    @include griddify(3, 10px);
+  }
+
+  @media (min-width: $max-width + 1) {
+    @include griddify(4, 10px);
   }
 }
 

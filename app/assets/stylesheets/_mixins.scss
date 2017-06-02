@@ -56,3 +56,35 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+@mixin griddify($grid, $gutter) {
+  $key: 0;
+
+  @if $grid == 2 {
+    $gutter: $gutter / 2;
+  }
+
+  flex: 0 0 calc(100% / #{$grid} - #{$gutter});
+  margin: 0 5px $gutter;
+
+  @for $i from 1 through $grid {
+    $key: $key + 1;
+
+    @if $key == 1 {
+      &:first-of-type {
+        margin-left: 0;
+        margin-right: $gutter;
+      }
+    } @elseif $key == $grid {
+      &:nth-child(#{$key}n) {
+        margin-right: 0;
+        margin-left: $gutter;
+      }
+    }
+
+    &:nth-child(#{$grid}n+1) {
+      margin-left: 0;
+      margin-right: $gutter;
+    }
+  }
+}

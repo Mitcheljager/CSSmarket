@@ -159,6 +159,10 @@
 
   @include mediaquery("tablet") {
     padding: 0 0 5px 0;
+
+    &--close {
+      display: none;
+    }
   }
 }
 

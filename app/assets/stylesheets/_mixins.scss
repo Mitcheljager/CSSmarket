@@ -70,12 +70,7 @@
   @for $i from 1 through $grid {
     $key: $key + 1;
 
-    @if $key == 1 {
-      &:first-of-type {
-        margin-left: 0;
-        margin-right: $gutter;
-      }
-    } @elseif $key == $grid {
+    @if $key == $grid {
       &:nth-child(#{$key}n) {
         margin-right: 0;
         margin-left: $gutter;

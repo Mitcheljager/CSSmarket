@@ -1,0 +1,105 @@
+.project {
+  @include maxwidth(18px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project__title {
+  color: darken(map-get($color, "light-grey"), 35%);
+  margin-bottom: 15px;
+  width: 100%;
+  text-align: left;
+}
+
+.project__item {
+  float: left;
+  width: 100%;
+  flex: 0 0 calc(50% - 10px);
+  margin: map-get($element, "project-spacing") 0;
+
+  // &:nth-child(2n) {
+  //   padding: 0 0 0 map-get($element, "project-spacing");
+  // }
+  //
+  // &:nth-child(2n+1) {
+  //   padding: 0 map-get($element, "project-spacing") 0 0;
+  // }
+  //
+  // @include mediaquery("mobile-large") {
+  //   width: 33.33333%;
+  //   padding: 0 calc(#{map-get($element, "project-spacing")} / 2);
+  //
+  //   &:nth-child(2n) {
+  //     padding: 0 calc(#{map-get($element, "project-spacing")} / 2);
+  //   }
+  //
+  //   &:nth-child(2n+1) {
+  //     padding: 0 calc(#{map-get($element, "project-spacing")} / 2);
+  //   }
+  //
+  //   &:nth-child(3n) {
+  //     padding: 0 0 0 map-get($element, "project-spacing");
+  //   }
+  //
+  //   &:nth-child(3n+1) {
+  //     padding: 0 map-get($element, "project-spacing") 0 0;
+  //   }
+  // }
+}
+
+.project__image {
+  background: darken(map-get($color, "light-grey"), 35%);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+
+  &::before {
+    content:'';
+    padding-top:100%;
+    display:inline-block;
+  }
+}
+
+.project__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: map-get($element, "project-spacing") 0 0;
+  position: relative;
+}
+
+.project__name {
+  font-size: 16px;
+  width: calc(100% - 65px);
+  float: left;
+  font-weight: 500;
+  @include dotdotdot();
+}
+
+.project__author {
+  font-size: 13px;
+  width: calc(100% - 65px);
+  float: left;
+  font-weight: 400;
+  margin-top: -2px;
+  @include dotdotdot();
+}
+
+.project__price {
+  position: absolute;
+  right: 0;
+  font-weight: 600;
+  color: map-get($color, "brand-secondary-second");
+  width: 57px;
+  text-align: center;
+  border: 2px solid map-get($color, "brand-secondary-second");
+  padding: 4px 0px;
+  border-radius: 3px;
+}
+
+.project__more {
+  margin-top: 20px;
+  float: left;
+}

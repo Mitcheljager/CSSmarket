@@ -49,3 +49,10 @@
   font-weight: 700;
   letter-spacing: 1px;
 }
+
+@mixin dotdotdot() {
+  overflow:hidden;
+  display:inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

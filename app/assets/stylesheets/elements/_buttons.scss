@@ -6,4 +6,8 @@
   &--white {
     @include button(map-get($color, "white"), map-get($color, "brand-secondary-second"), "false");
   }
+
+  &--grey {
+    @include button(map-get($color, "light-grey"), darken(map-get($color, "light-grey"), 35%), "false");
+  }
 }

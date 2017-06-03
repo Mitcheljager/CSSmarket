@@ -64,7 +64,7 @@
     $max-query: $max-width / $max-columns * $i;
 
     @if $i == $max-columns {
-      $max-query: 100vw;
+      $max-query: 9999px;
     }
 
     @media (min-width: #{$previous-width}) and (max-width: #{$max-query}) {
@@ -73,6 +73,7 @@
 
       .#{$child} {
         flex: 0 0 calc(100% / #{$i} - #{$gutter});
+        width: calc(100% / #{$i} - #{$gutter});
         margin: 0 $gutter / 2 $gutter * 3;
       }
 

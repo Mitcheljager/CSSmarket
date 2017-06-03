@@ -1,5 +1,5 @@
 $gutter: 20px;
-@include griddify(4, 2, 20px, 1.25, projects__parent, project);
+@include griddify(4, 2, 10px, 1.25, projects__parent, project);
 
 .projects {
   display: flex;

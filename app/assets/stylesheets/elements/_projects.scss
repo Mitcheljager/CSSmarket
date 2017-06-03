@@ -1,11 +1,20 @@
+$gutter: 20px;
+
 .projects {
-  @include maxwidth(30px);
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  @include mediaquery("tablet") {
-    @include maxwidth(50px);
+  @media (max-width: 640px) {
+    @include maxwidth(30px + $gutter);
+  }
+
+ @media (min-width: 641px) and (max-width: $max-width) {
+    @include maxwidth(50px + $gutter * 1.5);
+  }
+
+  @media (min-width: $max-width + 1) {
+    @include maxwidth(50px + $gutter * 2);
   }
 }
 
@@ -36,15 +45,15 @@
   min-height: 100px;
 
   @media (max-width: 640px) {
-    @include griddify(2, 10px);
+    @include griddify(2, $gutter / 2);
   }
 
  @media (min-width: 641px) and (max-width: $max-width) {
-    @include griddify(3, 15px);
+    @include griddify(3, $gutter / 2 * 1.5);
   }
 
   @media (min-width: $max-width + 1) {
-    @include griddify(4, 20px);
+    @include griddify(4, $gutter);
   }
 
   margin-bottom: 20px;

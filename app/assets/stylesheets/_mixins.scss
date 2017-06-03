@@ -57,7 +57,30 @@
   white-space: nowrap;
 }
 
-@mixin griddify($grid, $gutter) {
-  flex: 0 0 calc(100% / #{$grid} - #{$gutter});
-  margin: 0 $gutter / 2 $gutter * 3;
+@mixin griddify($max-columns, $min-columns, $gutter, $gutter-modifier, $parent, $child) {
+  $previous-width: 0;
+
+  @for $i from $min-columns through $max-columns {
+    $max-query: $max-width / $max-columns * $i;
+
+    @if $i == $max-columns {
+      $max-query: 100vw;
+    }
+
+    @media (min-width: #{$previous-width}) and (max-width: #{$max-query}) {
+      $previous-width: $max-query + 1;
+      $gutter: $gutter * $gutter-modifier;
+
+      .#{$child} {
+        flex: 0 0 calc(100% / #{$i} - #{$gutter});
+        margin: 0 $gutter / 2 $gutter * 3;
+      }
+
+      .#{$parent} {
+        width: calc(100% + #{$gutter});
+        margin-left: -$gutter;
+        margin-right: -$gutter;
+      }
+    }
+  }
 }

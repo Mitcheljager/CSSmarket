@@ -69,11 +69,11 @@
 
     @media (min-width: #{$previous-width}) and (max-width: #{$max-query}) {
       $previous-width: $max-query + 1;
-      $gutter: $gutter * $gutter-modifier;
+      $gutter: round($gutter * $gutter-modifier);
 
       .#{$child} {
-        flex: 0 0 calc(100% / #{$i} - #{$gutter});
-        width: calc(100% / #{$i} - #{$gutter});
+        flex: 0 0 calc(#{floor(100% / $i * 20) / 20} - #{$gutter});
+        width: calc(#{floor(100% / $i * 20) / 20} - #{$gutter});
         margin: 0 $gutter / 2 $gutter * 3;
       }
 

@@ -34,6 +34,18 @@ $gutter: 20px;
   @include mediaquery("tablet") {
     margin-bottom: 50px;
   }
+
+  @media (max-width: 640px) {
+    margin-left: $gutter;
+  }
+
+ @media (min-width: 641px) and (max-width: $max-width) {
+    margin-left: $gutter * 1.5;
+  }
+
+  @media (min-width: $max-width + 1) {
+    margin-left: $gutter * 2;
+  }
 }
 
 .projects__more {
@@ -49,11 +61,11 @@ $gutter: 20px;
   }
 
  @media (min-width: 641px) and (max-width: $max-width) {
-    @include griddify(3, $gutter / 2 * 1.5);
+    @include griddify(3, $gutter * 1.5);
   }
 
   @media (min-width: $max-width + 1) {
-    @include griddify(4, $gutter);
+    @include griddify(4, $gutter * 2);
   }
 
   margin-bottom: 20px;

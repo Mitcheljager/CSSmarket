@@ -7,9 +7,12 @@
         </div>
         <div class="c50">
             <a href="#" class="cart right">Cart (0)</a>
-            <a href="/cssmarket/user/logout.php" class="user right">Signout</a>
-            <a href="#" class="user right">Username</a>
-            <a href="#" class="login right">Login / Register</a>
+
+            <% if current_user %>
+              <a class="login">Signed in as <%= current_user.name %></a> | <%= link_to "Logout", "/logout", class: "login right" %>
+            <% else %>
+              <%= link_to "Login", "/login", class: "login right" %> | <%= link_to "Signup", "/signup", class: "login right" %>
+            <% end %>
         </div>
     </div>
 </section>

@@ -15,6 +15,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+gem 'bcrypt'
+
 gem 'high_voltage', '~> 3.0.0'
 
 gem 'elasticsearch-model'

@@ -1,0 +1,97 @@
+$gutter: 20px;
+@include griddify(4, 2, map-get($element, "project-spacing"), 1.25, projects__parent, project);
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include maxwidth(30px);
+
+  @include mediaquery("tablet") {
+    @include maxwidth(50px);
+  }
+}
+
+.projects__parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.projects__title {
+  color: darken(map-get($color, "light-grey"), 35%);
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: left;
+}
+
+.projects__more {
+  margin-top: 20px;
+  float: left;
+}
+
+.project {
+  min-height: 100px;
+  margin-bottom: 20px;
+}
+
+.project__image {
+  background: darken(map-get($color, "light-grey"), 35%);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+
+  &::before {
+    content:'';
+    padding-top:100%;
+    display:inline-block;
+  }
+}
+
+.project__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: (map-get($element, "project-spacing") * 1.25) 0 0;
+  position: relative;
+}
+
+.project__name {
+  font-size: 16px;
+  width: calc(100% - 65px);
+  float: left;
+  font-weight: 600;
+  color: map-get($color, "brand-primary");
+  @include dotdotdot();
+
+  @include mediaquery("tablet") {
+    font-size: 18px;
+  }
+}
+
+.project__author {
+  font-size: 12px;
+  width: calc(100% - 65px);
+  float: left;
+  font-weight: 400;
+  margin-top: -2px;
+  @include dotdotdot();
+
+  @include mediaquery("tablet") {
+    font-size: 14px;
+  }
+}
+
+.project__price {
+  position: absolute;
+  right: 0;
+  font-weight: 600;
+  color: map-get($color, "brand-secondary-second");
+  width: 57px;
+  text-align: center;
+  border: 2px solid map-get($color, "brand-secondary-second");
+  padding: 5px 0px;
+  border-radius: 3px;
+  font-size: 14px;
+}

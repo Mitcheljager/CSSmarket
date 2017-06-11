@@ -1,45 +1,69 @@
-<section id="headerTop">
-    <div class="wrapper">
-        <div class="c50">
-            <a href="/" class="logo left" title="cssmarket"><%= image_tag('logo.png') %></a>
-            <a href="#" class="topMenu left">About</a>
-            <a href="#" class="topMenu left">Sell</a>
-        </div>
-        <div class="c50">
-            <a href="#" class="cart right">Cart (0)</a>
+<header class="header">
+  <div class="header__column">
+    <%= image_tag("logoCSSmarket.png", class: "header__logo") %>
+    <!-- tablet and higher -->
+    <a href="#" class="header__link header__link--tablet">About</a>
+    <a href="#" class="header__link header__link--tablet">Sell</a>
+  </div>
+  <div class="header__column">
+    <!-- mobile -->
+    <a href="#" class="header__link">
+      <i class="header__icon material-icons">shopping_cart</i>
+      <span class="icon__label">0</span>
+    </a>
+    <a href="javascript:void(0)" class="header__link">
+      <i class="header__icon header__icon--mobile-menu material-icons">menu</i>
+    </a>
+    <!-- tablet and higher -->
+    <a href="#" class="header__link header__link--tablet">Login / Register</a>
+    <a href="#" class="button button--gradient header__link--tablet">cart (1)</a>
+  </div>
+</header>
 
-            <% if current_user %>
-              <a class="login">Signed in as <%= current_user.name %></a> | <%= link_to "Logout", "/logout", class: "login right" %>
-            <% else %>
-              <%= link_to "Login", "/login", class: "login right" %> | <%= link_to "Signup", "/signup", class: "login right" %>
-            <% end %>
-        </div>
-    </div>
-</section>
+<section class="overlay"></section>
 
-<section id="headerBottom">
-    <div class="wrapper">
-        <menu class="c100">
-            <ul>
-                <li>
-                    <a href="#">
-                        <span class="top"><i class="demo-icon icon-icon4"></i></span>
-                        <span class="bottom">Menus</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="active">
-                        <span class="top"><i class="demo-icon icon-icon3"></i></span>
-                        <span class="bottom">Buttons</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="top"><i class="demo-icon icon-icon1-2"></i></span>
-                        <span class="bottom">Forms</span>
-                    </a>
-                </li>
-            </ul>
-        </menu>
-    </div>
-</section>
+<nav class="menu">
+  <span class="menu__close">
+    <i class="menu__icon menu__icon--close material-icons">arrow_forward</i>
+  </span>
+  <span class="menu__link menu__link--seller">
+    <span class="menu__label">Become a seller</span>
+    <a href="#" class="button button--white">Start selling</a>
+  </span>
+  <a class="menu__link" href="#">
+    <i class="menu__icon material-icons">track_changes</i>
+    <span class="menu__label">Buttons</span>
+  </a>
+  <a class="menu__link menu__link--is-active" href="#">
+    <i class="menu__icon material-icons">fingerprint</i>
+    <span class="menu__label">Menus</span>
+  </a>
+  <a class="menu__link" href="#">
+    <i class="menu__icon material-icons">visibility</i>
+    <span class="menu__label">Forms</span>
+  </a>
+  <a class="menu__link" href="#">
+    <i class="menu__icon material-icons">track_changes</i>
+    <span class="menu__label">Buttons</span>
+  </a>
+  <a class="menu__link" href="#">
+    <i class="menu__icon material-icons">fingerprint</i>
+    <span class="menu__label">Menus</span>
+  </a>
+  <a class="menu__link" href="#">
+    <i class="menu__icon material-icons">visibility</i>
+    <span class="menu__label">Forms</span>
+  </a>
+  <a class="menu__link" href="#">
+    <i class="menu__icon material-icons">track_changes</i>
+    <span class="menu__label">Buttons</span>
+  </a>
+  <a class="menu__link" href="#">
+    <i class="menu__icon material-icons">fingerprint</i>
+    <span class="menu__label">Menus</span>
+  </a>
+
+  <div class="menu__login">
+    <a href="#" class="menu__link menu__link--extra">Login / Register</a>
+  </div>
+</nav>

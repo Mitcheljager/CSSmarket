@@ -8,7 +8,7 @@
 
 @mixin maxwidth($top: 0, $bottom: $top, $size: $max-width) {
   margin: 0 auto;
-  padding: $top 10px $bottom;
+  padding: $top 18px $bottom;
 
   @media (min-width: $size + 40) {
     padding: $top calc((100vw - #{$size}) / 2) $bottom;
@@ -24,5 +24,64 @@
 
   @include mediaquery("max-width") {
     font-size: round($max-width * ($size / 100));
+  }
+}
+
+@mixin linear-gradient-b($args...) {
+ background: linear-gradient($args);
+}
+
+@mixin button($bg, $textColor, $gradient: "false") {
+  @if ($gradient == "true") {
+    @include linear-gradient-b(45deg, rgba(map-get($color, "brand-secondary"), 1), rgba(map-get($color, "brand-secondary-second"), 1));
+  }
+  @else {
+    background: $bg;
+  }
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $textColor;
+  font-size: 13px;
+  min-width: 155px;
+  text-align: center;
+  border-radius: 1000px;
+  padding: 10px 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+@mixin dotdotdot() {
+  overflow:hidden;
+  display:inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin griddify($max-columns, $min-columns, $gutter, $gutter-modifier, $parent, $child) {
+  $previous-width: 0;
+
+  @for $i from $min-columns through $max-columns {
+    $max-query: $max-width / $max-columns * $i;
+
+    @if $i == $max-columns {
+      $max-query: 9999px;
+    }
+
+    @media (min-width: #{$previous-width}) and (max-width: #{$max-query}) {
+      $previous-width: $max-query + 1;
+      $gutter: round($gutter * $gutter-modifier);
+
+      .#{$child} {
+        flex: 0 0 calc(#{floor(100% / $i * 20) / 20} - #{$gutter});
+        width: calc(#{floor(100% / $i * 20) / 20} - #{$gutter});
+        margin: 0 $gutter / 2 $gutter * 3;
+      }
+
+      .#{$parent} {
+        width: calc(100% + #{$gutter});
+        margin-left: -$gutter;
+        margin-right: -$gutter;
+      }
+    }
   }
 }

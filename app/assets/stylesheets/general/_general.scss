@@ -4,7 +4,7 @@
 
 html,
 body {
-  font-family: sans-serif, Helvetica;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   margin: 0;
   padding: 0;
@@ -14,11 +14,55 @@ body {
   }
 }
 
-a {
+body {
+  padding-top: map-get($element, "header-height");
+
+  @include mediaquery("tablet") {
+    padding-top: 0;
+  }
+}
+
+section {
+  @include maxwidth(0);
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+h1 {
+  font-size: 18px;
+  line-height: 25px;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+
+  @include mediaquery("tablet") {
+    font-size: 36px;
+    line-height: 43px;
+  }
+}
+
+h2 {
+  font-size: 16px;
+  line-height: 23px;
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+
+  @include mediaquery("tablet") {
+    font-size: 26px;
+    line-height: 33px;
+  }
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
 }

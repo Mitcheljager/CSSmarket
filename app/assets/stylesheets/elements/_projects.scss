@@ -1,5 +1,5 @@
 $gutter: 20px;
-@include griddify(4, 2, 10px, 1.25, projects__parent, project);
+@include griddify(4, 2, map-get($element, "project-spacing"), 1.25, projects__parent, project);
 
 .projects {
   display: flex;
@@ -32,7 +32,6 @@ $gutter: 20px;
 
 .project {
   min-height: 100px;
-
   margin-bottom: 20px;
 }
 
@@ -54,7 +53,7 @@ $gutter: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: (map-get($element, "project-spacing") * 2) 0 0;
+  margin: (map-get($element, "project-spacing") * 1.25) 0 0;
   position: relative;
 }
 
@@ -65,6 +64,10 @@ $gutter: 20px;
   font-weight: 600;
   color: map-get($color, "brand-primary");
   @include dotdotdot();
+
+  @include mediaquery("tablet") {
+    font-size: 18px;
+  }
 }
 
 .project__author {
@@ -74,6 +77,10 @@ $gutter: 20px;
   font-weight: 400;
   margin-top: -2px;
   @include dotdotdot();
+
+  @include mediaquery("tablet") {
+    font-size: 14px;
+  }
 }
 
 .project__price {

@@ -11,6 +11,10 @@
   @include mediaquery("tablet") {
     height: 280px;
   }
+
+  &--blue {
+    background: map-get($color, "brand-primary-third");
+  }
 }
 
 .intro__title {

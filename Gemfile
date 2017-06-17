@@ -24,6 +24,8 @@ gem 'elasticsearch-rails'
 
 gem 'wdm', '~> 0.1.0' if Gem.win_platform?
 
+gem 'scss_lint', require: false
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end

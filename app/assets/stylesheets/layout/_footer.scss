@@ -2,8 +2,8 @@
 
 .footer {
   @include maxwidth(50px);
-  background:map-get($color, "brand-primary");
-  color:white;
+  background: map-get($color, "brand-primary");
+  color: map-get($color, "white");
   display: flex;
   flex-direction: column;
   align-items: center;

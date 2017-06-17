@@ -8,7 +8,6 @@
   background: map-get($color, "brand-primary");
   color: map-get($color, "white");
   z-index: 1000;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,6 +40,14 @@
   margin: 0 0 0 25px;
   position: relative;
 
+  @include mediaquery("tablet") {
+    display: none;
+
+    &--tablet {
+      display: block;
+    }
+  }
+
   &--tablet {
     display: none;
     margin: 0 25px 0 0;
@@ -49,21 +56,13 @@
       margin: 0 25px;
     }
   }
-
-  @include mediaquery("tablet") {
-    display: none;
-
-    &--tablet {
-      display: block;
-    }
-  }
 }
 
 .icon__label {
+  @include linear-gradient-b(45deg, rgba(map-get($color, "brand-secondary"), 1), rgba(map-get($color, "brand-secondary-second"), 1));
   position: absolute;
   top: -7px;
   left: 13px;
-  @include linear-gradient-b(45deg, rgba(map-get($color, "brand-secondary"), 1), rgba(map-get($color, "brand-secondary-second"), 1));
   width: 20px;
   height: 20px;
   border-radius: 100%;

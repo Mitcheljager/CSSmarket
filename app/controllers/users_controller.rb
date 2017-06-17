@@ -12,6 +12,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.select("id", "name", "created_at").find_by_name(params[:name])
+  end
+
   private
 
   def user_params

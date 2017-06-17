@@ -1,10 +1,12 @@
-<!-- <%= link_to post_path(post), class: "c25 projectMargin" do %>
-    <div class="project add" style="background:url(https://image-tf.s3.envato.com/files/168406826/1.__large_preview.jpg) center center; background-size:cover;">
-      <div class="overlay"><i class="demo-icon icon-icon4"></i></div>
+<div class="project">
+  <%= link_to post_path(post), class: "project__image", style: "background-image: url(https://placehold.it/400x300)" do %>
+    <div class="project__overlay">
+      <i class="project__icon material-icons">search</i>
     </div>
-    <div class="c100N about">
-        <span class="name"><%= post.title %></span>
-        <span class="pack"><%= post.categories %></span>
-        <div class="add"><span class="price">&euro; 122</span> <span class="text">SHOW</span></div>
-    </div>
-<% end %> -->
+  <% end %>
+  <div class="project__content">
+    <span class="project__name"><%= post.title %></span>
+    <span class="project__author"><%= post.categories %></span>
+    <%= link_to "122", post_path(post), class: "project__price" %>
+  </div>
+</div>

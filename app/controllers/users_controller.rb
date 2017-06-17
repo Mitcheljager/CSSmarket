@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.select("id", "name", "created_at").find_by_name(params[:name])
+    @posts = Post.where(user_id: @user.id).all
   end
 
   private

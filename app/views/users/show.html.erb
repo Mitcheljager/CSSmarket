@@ -4,8 +4,10 @@
   Signed up at: <%= @user.created_at.strftime("%m/%d/%Y %I:%M%p") %>
 </p>
 
-<div class="posts">
-  <% @posts.each do |post| %>
-    <%= render "posts/post", post: post %>
-  <% end %>
+<div class="projects">
+  <div class="projects__parent">
+    <% @posts.each do |post| %>
+      <%= render "posts/post", post: post %>
+    <% end %>
+  </div>
 </div>

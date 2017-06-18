@@ -28,6 +28,7 @@ gem 'scss_lint', require: false
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'sqlite3'
 end
 
 group :development do
@@ -36,7 +37,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  gem 'sqlite3'
   gem 'foreman'
 end
 

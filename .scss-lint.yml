@@ -1,5 +1,7 @@
 severity: warning
 
+scss_files: 'app/assets/stylesheets/*'
+
 linters:
   StringQuotes:
     enabled: true

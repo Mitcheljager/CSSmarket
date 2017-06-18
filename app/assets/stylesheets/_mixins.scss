@@ -1,7 +1,7 @@
-@mixin mediaquery($size){
+@mixin mediaquery($size) {
   $query: map-get($breakpoints, $size);
 
-  @media #{$query}{
+  @media #{$query} {
     @content;
   }
 }
@@ -28,16 +28,16 @@
 }
 
 @mixin linear-gradient-b($args...) {
- background: linear-gradient($args);
+  background: linear-gradient($args);
 }
 
 @mixin button($bg, $textColor, $gradient: "false") {
   @if ($gradient == "true") {
     @include linear-gradient-b(45deg, rgba(map-get($color, "brand-secondary"), 1), rgba(map-get($color, "brand-secondary-second"), 1));
-  }
-  @else {
+  } @else {
     background: $bg;
   }
+
   text-transform: uppercase;
   text-decoration: none;
   color: $textColor;
@@ -51,8 +51,8 @@
 }
 
 @mixin dotdotdot() {
-  overflow:hidden;
-  display:inline-block;
+  overflow: hidden;
+  display: inline-block;
   text-overflow: ellipsis;
   white-space: nowrap;
 }

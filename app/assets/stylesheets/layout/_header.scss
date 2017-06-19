@@ -42,15 +42,15 @@
 
   @include mediaquery("tablet") {
     display: none;
-
-    &--tablet {
-      display: block;
-    }
   }
 
   &--tablet {
     display: none;
     margin: 0 25px 0 0;
+
+    @include mediaquery("tablet") {
+      display: block;
+    }
 
     &:first-of-type {
       margin: 0 25px;

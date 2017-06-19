@@ -30,11 +30,6 @@
   @include mediaquery("tablet") {
     width: 50%;
     height: 350px;
-
-    h2 {
-      max-width: 600px;
-      font-size: 30px;
-    }
   }
 
   h2 {
@@ -42,6 +37,11 @@
     max-width: 280px;
     width: 100%;
     font-weight: 300;
+
+    @include mediaquery("tablet") { 
+      max-width: 600px;
+      font-size: 30px;
+    }
   }
 }
 

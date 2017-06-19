@@ -80,11 +80,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 0;
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-
+    
     &--extra,
     &--seller {
       display: none;
@@ -100,6 +96,10 @@
 
   &:last-of-type {
     margin-bottom: map-get($element, "header-height");
+
+    @include mediaquery("tablet") { 
+      margin-bottom: 0;
+    }
   }
 
   &--extra {

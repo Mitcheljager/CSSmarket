@@ -38,7 +38,7 @@
     width: 100%;
     font-weight: 300;
 
-    @include mediaquery("tablet") { 
+    @include mediaquery("tablet") {
       max-width: 600px;
       font-size: 30px;
     }

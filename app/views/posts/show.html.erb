@@ -1,7 +1,25 @@
-<article class="post">
-  <h1 class="post__title"><%= @post.title %></h1>
-  <p class="post__content">
-    <%= @post.content %>
-  </p>
-  <span class="post__category"><%= @post.categories %></span>
-</article>
+<section class="intro intro--blue">
+  <h1 class="intro__title"><%= @post.title %></h1>
+  <h2 class="intro__subtitle">Created by: Jewelbeast</h2>
+</section>
+
+<section class="post">
+  <article class="post__article">
+    <img src="https://image-cc.s3.envato.com/files/190444901/01_Preview.png" class="post__image" />
+    <p><time>02/12/1992</time></p>
+    <div class="post__content">
+      <!-- <%= @post.content %> -->
+      <p>Oat cake cheesecake tootsie roll chocolate cake. Lemon drops caramels croissant jelly jelly-o topping. Fruitcake cheesecake tiramisu halvah. Icing jelly-o marshmallow candy chocolate cake chocolate bar carrot cake chocolate. Chocolate bar jelly beans jujubes sweet pie liquorice marzipan wafer carrot cake. Muffin lollipop candy canes brownie sugar plum soufflé danish chocolate bar lollipop. Apple pie biscuit sugar plum apple pie candy muffin cotton candy. Cupcake caramels donut chocolate bar cake croissant sugar plum jelly-o tiramisu. Lollipop donut chocolate cake caramels fruitcake candy gummies lollipop. Cookie cheesecake brownie topping. Pudding wafer lemon drops cake danish pudding pastry. Cupcake candy canes fruitcake icing. Chupa chups danish chocolate cake lemon drops jelly-o oat cake macaroon.</p>
+      <p>Toffee cupcake gummi bears caramels marshmallow. Pie croissant powder tootsie roll cake gummi bears. Pastry macaroon brownie sweet roll. Tart chocolate cake topping pastry. Marzipan sugar plum tootsie roll chocolate bar chocolate bar donut wafer. Gingerbread cake marzipan liquorice gummies croissant tart cake. Bear claw ice cream wafer cookie dragée. Sweet roll chocolate bar biscuit pastry muffin candy canes. Chocolate bar fruitcake carrot cake danish macaroon chocolate cake. Oat cake cake donut lollipop jujubes cake caramels gummi bears bear claw. Bonbon cotton candy dessert caramels apple pie donut. Bear claw apple pie jelly croissant marshmallow chocolate sugar plum powder bear claw. Cake caramels brownie.</p>
+      <p>Topping powder soufflé tootsie roll fruitcake. Jelly candy canes oat cake pudding tootsie roll sweet. Pastry gingerbread macaroon. Toffee donut pie jujubes halvah cake sweet roll. Tiramisu gummi bears brownie danish dessert. Gummies danish bonbon jujubes dragée chocolate bar oat cake jujubes. Marshmallow chocolate cake soufflé. Powder jujubes jelly-o lollipop biscuit apple pie biscuit. Chocolate bar jelly sesame snaps jelly-o candy canes croissant. Muffin oat cake tart powder wafer cookie ice cream biscuit. Candy canes sugar plum lemon drops candy sweet biscuit jelly marzipan. Gummies marzipan gingerbread sweet roll icing brownie ice cream.</p>
+    </div>
+    <span class="post__category"><%= @post.categories %></span>
+  </article>
+
+  <aside class="post__aside">
+    <span class="post__price">&euro;14</span>
+    <p class="post__licence">Use, by you or one client, in a single end product which end users are not charged for. The total price includes the item price and a buyer fee.</p>
+    <a href="#" class="button button--grey">Live Preview</a>
+    <a href="#" class="button button--gradient">Add to Cart</a>
+  </aside>
+</section>

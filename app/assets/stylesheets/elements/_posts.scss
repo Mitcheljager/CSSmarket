@@ -36,18 +36,19 @@
     display: block;
     border-top: 0;
   }
+}
 
-  a {
-    width: 48%;
-    display: block;
-    font-size: 12px;
-    min-width: 135px;
+.post__button {
+  width: 48%;
+  display: block;
+  font-size: 11px;
+  min-width: 135px;
 
-    @include mediaquery("tablet") {
-      width: 100%;
-      padding: 12px 20px;
-      margin-bottom: 10px;
-    }
+  @include mediaquery("tablet") {
+    width: 100%;
+    font-size: 13px;
+    padding: 12px 20px;
+    margin-bottom: 10px;
   }
 }
 

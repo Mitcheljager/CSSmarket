@@ -7,6 +7,6 @@
   <div class="project__content">
     <span class="project__name"><%= post.title %></span>
     <span class="project__author"><%= post.user_id %></span>
-    <%= link_to post.price, post_path(post), class: "project__price" %>
+    <%= link_to "€" + post.price, post_path(post), class: "project__price" %>
   </div>
 </div>

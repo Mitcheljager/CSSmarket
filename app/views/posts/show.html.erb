@@ -5,7 +5,9 @@
 
 <section class="post">
   <article class="post__article">
-    <%= image_tag(@post.image, class: "post__image") %>
+    <% if @post.image %>
+      <%= image_tag(@post.image, class: "post__image") %>
+    <% end %>
 
     <time><%= @post.created_at %></time>
     <div class="post__content">
@@ -15,7 +17,7 @@
   </article>
 
   <aside class="post__aside">
-    <span class="post__price">&euro;14</span>
+    <span class="post__price">&euro; <%= @post.price %></span>
     <p class="post__licence"><%= @post.license %></p>
     <a href="#" class="post__button button button--grey">Live Preview</a>
     <a href="#" class="post__button button button--gradient">Add to Cart</a>

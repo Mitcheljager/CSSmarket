@@ -1,12 +1,12 @@
 <div class="project">
-  <%= link_to post_path(post), class: "project__image", style: "background-image: url(https://placehold.it/400x300)" do %>
+  <%= link_to post_path(post), class: "project__image", style: "background-image: url(#{post.image})" do %>
     <div class="project__overlay">
       <i class="project__icon material-icons">search</i>
     </div>
   <% end %>
   <div class="project__content">
     <span class="project__name"><%= post.title %></span>
-    <span class="project__author"><%= post.categories %></span>
-    <%= link_to "122", post_path(post), class: "project__price" %>
+    <span class="project__author"><%= post.user_id %></span>
+    <%= link_to post.price, post_path(post), class: "project__price" %>
   </div>
 </div>

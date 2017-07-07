@@ -9,7 +9,10 @@
       <%= image_tag(@post.image, class: "post__image") %>
     <% end %>
 
-    <time><%= @post.created_at %></time>
+    <p>
+      <time><%= @post.created_at %></time>
+    </p>
+
     <div class="post__content">
       <%= @post.content %>
     </div>

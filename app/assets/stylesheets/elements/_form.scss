@@ -1,3 +1,5 @@
-.field_with_errors {
-  color: map-get($color, "error");
+.field {
+  &--has-errors {
+    color: map-get($color, "error");
+  }
 }

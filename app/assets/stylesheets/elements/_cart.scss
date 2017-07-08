@@ -78,10 +78,10 @@
 }
 
 .product__name {
+  @include dotdotdot();
   font-size: 16px;
   font-weight: 600;
   width: 100%;
-  @include dotdotdot();
 
   @include mediaquery("tablet") {
     font-size: 18px;
@@ -97,10 +97,10 @@
 }
 
 .product__author {
+  @include dotdotdot();
   font-size: 12px;
   font-weight: 400;
   width: 100%;
-  @include dotdotdot();
 
   @include mediaquery("tablet") {
     font-size: 14px;

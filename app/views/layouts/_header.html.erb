@@ -1,6 +1,9 @@
 <header class="header">
   <div class="header__column">
-    <%= image_tag("logoCSSmarket.png", class: "header__logo") %>
+    <%= link_to root_path do %>
+      <%= image_tag("logoCSSmarket.png", class: "header__logo") %>
+    <% end %>
+
     <!-- tablet and higher -->
     <a href="#" class="header__link header__link--tablet">About</a>
     <a href="#" class="header__link header__link--tablet">Sell</a>
@@ -15,7 +18,12 @@
       <i class="header__icon header__icon--mobile-menu material-icons">menu</i>
     </a>
     <!-- tablet and higher -->
-    <a href="#" class="header__link header__link--tablet">Login / Register</a>
+    <% if current_user %>
+      <%= link_to current_user.name, logout_path, class: "header__link header__link--tablet" %>
+    <% else %>
+      <%= link_to "login/register", login_path, class: "header__link header__link--tablet" %>
+    <% end %>
+
     <a href="#" class="button button--gradient header__link--tablet">cart (1)</a>
   </div>
 </header>

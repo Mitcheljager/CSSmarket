@@ -67,3 +67,8 @@ h3 {
   letter-spacing: 1px;
   font-weight: 700;
 }
+
+a {
+  color: map-get($color, "brand-secondary-second");
+  font-weight: 600;
+}

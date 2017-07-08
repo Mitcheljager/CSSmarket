@@ -28,6 +28,7 @@
   width: 100%;
   max-width: 164px;
   height: auto;
+  margin-right: 25px;
 }
 
 .header__link {
@@ -54,6 +55,10 @@
 
     &:first-of-type {
       margin: 0 25px;
+    }
+
+    &:last-of-type {
+      margin: 0;
     }
   }
 }

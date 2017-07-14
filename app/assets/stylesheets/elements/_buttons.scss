@@ -10,4 +10,19 @@
   &--grey {
     @include button(map-get($color, "light-grey"), darken(map-get($color, "light-grey"), 35%), "false");
   }
+
+  &--small {
+    min-width: 31px;
+    font-size: 9px;
+    padding: 7px 15px;
+    display: table;
+    margin-top: 7px;
+
+    @include mediaquery("tablet") {
+      min-width: 41px;
+      font-size: 11px;
+      padding: 7px 19px;
+      margin-top: 15px;
+    }
+  }
 }

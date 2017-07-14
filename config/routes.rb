@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   post '/users' => 'users#create'
 
   get '/profile/:name' => 'users#show'
+
+  resources :charges
 end

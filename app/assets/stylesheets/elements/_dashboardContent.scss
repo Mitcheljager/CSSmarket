@@ -54,15 +54,15 @@
   .project {
     flex: 0 0 calc(50% - 13px);
 
-    @include mediaquery('mobile-large') {
+    @include mediaquery("mobile-large") {
       flex: 0 0 calc(33.3333% - 16px);
     }
 
-    @include mediaquery('tablet') {
+    @include mediaquery("tablet") {
       flex: 0 0 calc(50% - 20px);
     }
 
-    @include mediaquery('desktop') {
+    @include mediaquery("desktop") {
       flex: 0 0 calc(33.33333% - 20px);
     }
   }

@@ -71,7 +71,7 @@
   }
 
   &:not(:placeholder-shown) {
-    & + .form__label {
+    + .form__label {
       top: -5px;
       font-size: 13px;
     }
@@ -81,7 +81,7 @@
   &:active {
     outline: none;
 
-    & + .form__label {
+    + .form__label {
       top: -5px;
       font-size: 13px;
     }
@@ -95,7 +95,7 @@
   color: darken(map-get($color, "light-grey"), 25%);
   top: 50%;
   transform: translate(0, -50%);
-  pointer-events:none;
+  pointer-events: none;
   transition: all 150ms ease;
 
   &--textarea {

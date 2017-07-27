@@ -24,7 +24,7 @@
   border-radius: 3px;
   padding: 20px;
   width: 410px;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 40px rgba(map-get($color, "black"), 0.08);
   transform: scale(0.9);
   opacity: 0;
   transition: opacity 300ms ease, transform 0ms 300ms ease;
@@ -47,16 +47,16 @@
   width: 100%;
   display: block;
 
-  &:first-of-type {
-    margin-bottom: 10px;
-  }
-
   @include mediaquery("mobile-small") {
     margin-left: 5px;
     width: auto;
     display: inline;
+  }
 
-    &:first-of-type {
+  &:first-of-type {
+    margin-bottom: 10px;
+
+    @include mediaquery("mobile-small") {
       margin-bottom: 0;
     }
   }

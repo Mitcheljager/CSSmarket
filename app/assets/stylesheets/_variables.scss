@@ -1,6 +1,7 @@
 $max-width: 1200px;
 
 $breakpoints: (
+  "mobile-small":     "(min-width: 360px)",
   "mobile":           "(min-width: 460px)",
   "mobile-large":     "(min-width: 580px)",
   "tablet":           "(min-width: 768px)",

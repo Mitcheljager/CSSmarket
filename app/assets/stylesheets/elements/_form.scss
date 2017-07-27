@@ -3,3 +3,102 @@
     color: map-get($color, "error");
   }
 }
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form__parent {
+  width: 100%;
+  position: relative;
+  margin-bottom: 25px;
+
+  @include mediaquery("mobile-large") {
+    width: calc((100% / 2) - 15px);
+
+    &--full {
+      width: 100%;
+    }
+  }
+
+  @include mediaquery("tablet") {
+    width: 100%;
+    margin-bottom: 35px;
+
+    &--full {
+      width: 100%;
+    }
+  }
+
+  @include mediaquery("desktop") {
+    width: calc((100% / 2) - 15px);
+
+    &--full {
+      width: 100%;
+    }
+  }
+
+  .button {
+    display: inline-block;
+
+    &:focus,
+    &:active {
+      outline: none;
+    }
+  }
+}
+
+.form__input {
+  width: 100%;
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+  color: map-get($color, "brand-primary");
+  border: 0;
+  border-bottom: 1px solid map-get($color, "light-grey");
+  padding: 10px 0;
+
+  &--textarea {
+    resize: none;
+    height: 200px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: map-get($color, "brand-primary");
+  }
+
+  &:not(:placeholder-shown) {
+    & + .form__label {
+      top: -5px;
+      font-size: 13px;
+    }
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+
+    & + .form__label {
+      top: -5px;
+      font-size: 13px;
+    }
+  }
+}
+
+.form__label {
+  position: absolute;
+  font-size: 16px;
+  font-weight: 300;
+  color: darken(map-get($color, "light-grey"), 25%);
+  top: 50%;
+  transform: translate(0, -50%);
+  pointer-events:none;
+  transition: all 150ms ease;
+
+  &--textarea {
+    top: 20px;
+  }
+}

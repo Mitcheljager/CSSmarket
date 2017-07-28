@@ -1,0 +1,165 @@
+.dashboard__content {
+  width: 100%;
+
+  @include mediaquery("tablet") {
+    width: calc(100% - 263px);
+    max-width: calc(550px + 50px);
+    padding-left: 50px;
+  }
+
+  @include mediaquery("desktop") {
+    max-width: calc(550px + 128px);
+    padding-left: 128px;
+  }
+
+  h2 {
+    margin-bottom: 25px;
+  }
+}
+
+.content__title {
+  color: darken(map-get($color, "light-grey"), 35%);
+}
+
+.content__subtitle {
+  font-weight: 300;
+  font-size: 25px;
+
+  @include mediaquery("tablet") {
+    font-size: 36px;
+  }
+}
+
+.content__button {
+  margin-top: 10px;
+  display: table;
+}
+
+.content__subject {
+  padding-top: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include mediaquery("tablet") {
+    padding-top: 65px;
+  }
+
+  .projects {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .project {
+    flex: 0 0 calc(50% - 13px);
+
+    @include mediaquery("mobile-large") {
+      flex: 0 0 calc(33.3333% - 16px);
+    }
+
+    @include mediaquery("tablet") {
+      flex: 0 0 calc(50% - 20px);
+    }
+
+    @include mediaquery("desktop") {
+      flex: 0 0 calc(33.33333% - 20px);
+    }
+  }
+}
+
+//Earnings
+.content__earning {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  border: 1px solid map-get($color, "light-grey");
+  margin-bottom: 20px;
+
+  &--small {
+    width: 100%;
+    flex-direction: column;
+
+    @include mediaquery("mobile-large") {
+      width: calc((100% / 2) - 10px);
+    }
+  }
+}
+
+.earning__title {
+  width: 100%;
+  text-align: center;
+  color: darken(map-get($color, "light-grey"), 35%);
+  border-bottom: 1px solid map-get($color, "light-grey");
+  padding: 13px;
+}
+
+.earning__box {
+  width: calc(100% / 2);
+  padding: 35px 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .content__earning--small & {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.earning__icon {
+  font-size: 40px;
+  color: darken(map-get($color, "light-grey"), 35%);
+}
+
+.earning__total {
+  padding-top: 10px;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 300;
+
+  @include mediaquery("tablet") {
+    font-size: 36px;
+    line-height: 43px;
+  }
+
+  .content__earning--small & {
+    padding-top: 0;
+    border-bottom: 1px solid map-get($color, "light-grey");
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+}
+
+.earning__label {
+  font-size: 13px;
+  color: darken(map-get($color, "light-grey"), 35%);
+}
+
+.earning__list {
+  padding: 10px 0;
+}
+
+.list__group {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  font-size: 13px;
+  color: darken(map-get($color, "light-grey"), 35%);
+}
+
+.list__amount {
+  width: 15%;
+  text-align: right;
+}
+
+.list__total {
+  width: 25%;
+}
+
+.list__name {
+  @include dotdotdot();
+  width: 60%;
+  padding: 0 10px;
+}

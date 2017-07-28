@@ -13,6 +13,14 @@ body {
   @include mediaquery("tablet") {
     font-size: 16px;
   }
+
+  &.body--no-scroll {
+    overflow: hidden;
+
+    @include mediaquery("tablet") {
+      overflow: auto;
+    }
+  }
 }
 
 body {
@@ -71,4 +79,10 @@ h3 {
 a {
   color: map-get($color, "brand-secondary-second");
   font-weight: 600;
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  border: 0;
 }

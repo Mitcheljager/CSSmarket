@@ -1,14 +1,35 @@
 .button {
   &--gradient {
-    @include button(0, map-get($color, "white"), "true");
+    @include button(
+      0, //background color
+      map-get($color, "white"), //Text color
+      "true"
+    );
   }
 
   &--white {
-    @include button(map-get($color, "white"), map-get($color, "brand-secondary-second"), "false");
+    @include button(
+      map-get($color, "white"), //background color
+      map-get($color, "brand-secondary-second"), //Text color
+      "false"
+    );
   }
 
   &--grey {
-    @include button(map-get($color, "light-grey"), darken(map-get($color, "light-grey"), 35%), "false");
+    @include button(
+      map-get($color, "light-grey"), //background color
+      darken(map-get($color, "light-grey"), 35%), //Text color
+      "false"
+    );
+  }
+
+  &--ghost {
+    @include button(
+      transparent, //background color
+      map-get($color, "brand-secondary-second"), //Text color
+      "false"
+    );
+    border: 2px solid map-get($color, "brand-secondary-second");
   }
 
   &--small {

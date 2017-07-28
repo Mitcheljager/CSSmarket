@@ -1,0 +1,9 @@
+<%= form_for :charges, url: charges_path do |f| %>
+  <h1>Price: &euro; <%= @total_price %></h1>
+
+  <script class="stripe-button" src="https://checkout.stripe.com/checkout.js"
+          data-amount="<%= @total_price * 100 %>"
+          data-description="CSSMarket"
+          data-key="<%= Rails.application.secrets.stripe_publishable_key %>"
+          data-currency="eur"></script>
+<% end %>

@@ -22,6 +22,8 @@ gem 'high_voltage', '~> 3.0.0'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 
+gem 'stripe'
+
 gem 'wdm', '~> 0.1.0' if Gem.win_platform?
 
 gem 'scss_lint', require: false

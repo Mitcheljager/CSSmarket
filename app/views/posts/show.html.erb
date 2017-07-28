@@ -25,6 +25,27 @@
     <span class="post__price">&euro; <%= @post.price %></span>
     <p class="post__licence"><%= @post.license %></p>
     <a href="#" class="post__button button button--grey">Live Preview</a>
-    <a href="#" class="post__button button button--gradient">Add to Cart</a>
+
+    <h1>New Post</h1>
+
+    <%= form_for :cart_post, url: cart_posts_path do |f| %>
+
+      <% if not @post.nil? and @post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@post.errors.count, "error") %> prohibited
+          this post from being saved:</h2>
+        <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+      <% end %>
+
+      <%= f.hidden_field :post_id, value: @post.id %>
+      <%= f.hidden_field :cart_id, value: session[:cart_id] %>
+
+      <%= f.submit "Add to Cart", class: "post__button button button--gradient" %>
+    <% end %>
   </aside>
 </section>

@@ -1,23 +1,9 @@
 <%= form_for :charges, url: charges_path do |f| %>
-  <% if @product.errors.any? %>
-      <h2>
-        <%= pluralize(@product.errors.count, "error") %>
-      </h2>
-        prohibited this product from being saved:
-      <ul>
-        <% @product.errors.full_messages.each do |message| %>
-          <li>
-            <%= message %>
-          </li>
-        <% end %>
-      </ul>
-  <% end %>
-
-  Price: &euro; <%= @product.price %>
+  <h1>Price: &euro; <%= @total_price %></h1>
 
   <script class="stripe-button" src="https://checkout.stripe.com/checkout.js"
-          data-amount="<%= @product.price.to_i * 100 %>"
-          data-description="<%= @product.title %>"
+          data-amount="<%= @total_price * 100 %>"
+          data-description="CSSMarket"
           data-key="<%= Rails.application.secrets.stripe_publishable_key %>"
           data-currency="eur"></script>
 <% end %>

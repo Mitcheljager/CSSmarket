@@ -11,7 +11,16 @@ class ApplicationController < ActionController::Base
     redirect_to '/login' unless current_user
   end
 
-  private 
+  def shopping_cart_total
+    @shopping_cart_total = 0;
+
+    if session[:cart_id]
+      @shopping_cart_total = CartPost.where(cart_id: session[:cart_id]).count
+    end
+  end
+  helper_method :shopping_cart_total
+
+  private
     def set_cart
       @cart = Cart.find(session[:cart_id])
     rescue ActiveRecord::RecordNotFound

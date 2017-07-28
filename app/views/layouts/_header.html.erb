@@ -24,7 +24,7 @@
       <%= link_to "login/register", login_path, class: "header__link header__link--tablet" %>
     <% end %>
 
-    <a href="#" class="button button--gradient header__link--tablet">cart (1)</a>
+    <%= link_to "cart (#{ shopping_cart_total })", cart_path, class: "button button--gradient header__link--tablet" %>
   </div>
 </header>
 

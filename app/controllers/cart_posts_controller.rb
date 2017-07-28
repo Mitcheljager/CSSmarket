@@ -5,10 +5,14 @@ class CartPostsController < ApplicationController
   def create
     @cart_post = CartPost.new cart_item_params
 
-    if @cart_post.save
-      redirect_to cart_path
+    if !current_user
+      redirect_to "/login"
     else
-      redirect_to cart_path, :flash => { :error => "Product was already in cart" }
+      if @cart_post.save
+        redirect_to cart_path
+      else
+        redirect_to cart_path, :flash => { :error => "Product was already in cart" }
+      end
     end
   end
 

@@ -18,4 +18,5 @@ Rails.application.routes.draw do
 
   resources :cart_posts
   resources :charges
+  resources :orders
 end

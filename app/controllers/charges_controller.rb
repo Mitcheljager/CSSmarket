@@ -1,5 +1,6 @@
 class ChargesController < ApplicationController
   def new
+    @product = Post.first
   end
 
   def create
@@ -15,7 +16,7 @@ class ChargesController < ApplicationController
       :customer    => customer.id,
       :amount      => @amount,
       :description => 'Rails Stripe customer',
-      :currency    => 'usd'
+      :currency    => 'eur'
     )
 
   rescue Stripe::CardError => e

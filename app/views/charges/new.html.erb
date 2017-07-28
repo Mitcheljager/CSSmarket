@@ -1,18 +1,23 @@
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
-  </article>
+<%= form_for :charges, url: charges_path do |f| %>
+  <% if @product.errors.any? %>
+      <h2>
+        <%= pluralize(@product.errors.count, "error") %>
+      </h2>
+        prohibited this product from being saved:
+      <ul>
+        <% @product.errors.full_messages.each do |message| %>
+          <li>
+            <%= message %>
+          </li>
+        <% end %>
+      </ul>
+  <% end %>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
-          data-locale="auto"></script>
+  Price: &euro; <%= @product.price %>
+
+  <script class="stripe-button" src="https://checkout.stripe.com/checkout.js"
+          data-amount="<%= @product.price.to_i * 100 %>"
+          data-description="<%= @product.title %>"
+          data-key="<%= Rails.application.secrets.stripe_publishable_key %>"
+          data-currency="eur"></script>
 <% end %>

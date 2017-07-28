@@ -3,12 +3,12 @@ class CartPostsController < ApplicationController
   before_action :set_cart_post, only: [:destroy]
 
   def create
-    @cart.add_post(params)
+    @cart_post = CartPost.new cart_item_params
 
-    if @cart.save
+    if @cart_post.save
       redirect_to cart_path
     else
-      redirect_to @product
+      redirect_to cart_path, :flash => { :error => "Product was already in cart" }
     end
   end
 

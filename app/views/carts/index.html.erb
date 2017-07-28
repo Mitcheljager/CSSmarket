@@ -1,2 +1,25 @@
-<h1>Carts#index</h1>
-<p>Find me in app/views/carts/index.html.erb</p>
+<section class="intro intro--blue intro--cart">
+  <h1 class="intro__title">Review your order</h1>
+  <h2 class="intro__subtitle">Review your selection below and continue to our secure check out page.</h2>
+
+  <div class="cart">
+    <div style="background: blue"><%= flash[:error] %></div>
+    <% @posts.each do |post| %>
+      <%= render "carts/post", post: post %>
+    <% end %>
+
+    <!-- total box -->
+    <div class="cart__product">
+      <div class="product__content product__content--total">
+        <div class="product__detail">
+          <span class="product__name product__name--big">Total price</span>
+        </div>
+        <div class="product__price product__price--big">&euro;59</div>
+      </div>
+    </div>
+    <!-- checkout -->
+    <div class="cart__product cart__product--checkout">
+      <a href="#" class="button button--gradient">Checkout</a>
+    </div>
+  </div>
+</section>

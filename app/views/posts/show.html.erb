@@ -25,6 +25,6 @@
     <span class="post__price">&euro; <%= @post.price %></span>
     <p class="post__licence"><%= @post.license %></p>
     <a href="#" class="post__button button button--grey">Live Preview</a>
-    <a href="#" class="post__button button button--gradient">Add to Cart</a>
+    <%= link_to "Add to Cart", cart_posts_path(cart_id: session[:cart_id], post_id: @post.id), method: :post, class: "post__button button button--gradient" %>
   </aside>
 </section>

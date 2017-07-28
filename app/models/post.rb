@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
+  has_many :cart_posts
+  has_many :carts, :through => :cart_posts
+
   attribute :user_name, :string
 
   validates :title, presence: true, length: { minimum: 8 }, uniqueness: true

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'posts#index'
 
   resources :posts
+
   get 'search', to: 'posts#search'
 
   get '/login' => 'sessions#new'
@@ -13,5 +14,8 @@ Rails.application.routes.draw do
 
   get '/profile/:name' => 'users#show'
 
+  get '/cart' => 'carts#index'
+
+  resources :cart_posts
   resources :charges
 end

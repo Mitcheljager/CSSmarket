@@ -11,7 +11,7 @@ class CartPostsController < ApplicationController
       if @cart_post.save
         redirect_to cart_path
       else
-        redirect_to cart_path, :flash => { :error => "Product was already in cart" }
+        redirect_to cart_path, flash: { error: "Product was already in cart" }
       end
     end
   end

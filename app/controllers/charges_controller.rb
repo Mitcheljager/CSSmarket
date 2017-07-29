@@ -14,12 +14,19 @@ class ChargesController < ApplicationController
     charge = Stripe::Charge.create(
       :customer    => customer.id,
       :amount      => @total_price * 100,
-      :description => 'Rails Stripe customer',
+      :description => @order_description,
       :currency    => 'eur'
     )
 
-    session.delete(:cart_id)
+    @posts.each do |post|
+      @order = Order.new(amount: post.price, description: post.title, customer_id: customer.id, source: charge.id, post_id: post.id)
 
+      if @order.save
+        session.delete(:cart_id)
+      else
+        redirect_to cart_path, flash: { error: "Something went horribly wrong" }
+      end
+    end
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
@@ -31,6 +38,7 @@ class ChargesController < ApplicationController
       @cart_posts = CartPost.where(cart_id: @cart).all
       @posts = []
       @total_price = 0
+      @order_description = ""
 
       @cart_posts.each do |post|
         tposts = Post.where(id: post.post_id).order("created_at DESC")
@@ -39,6 +47,7 @@ class ChargesController < ApplicationController
 
       @posts.each do |post|
         @total_price += post.price.to_i
+        @order_description += post.id + ", "
       end
     end
 end

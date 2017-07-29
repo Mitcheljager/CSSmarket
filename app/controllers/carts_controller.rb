@@ -17,6 +17,8 @@ class CartsController < ApplicationController
 
       @posts.each do |post|
         @total_price += post.price.to_i
+        user = User.select("id", "name").find_by_id(post.user_id)
+        post.user_name = user.name
       end
     end
 end

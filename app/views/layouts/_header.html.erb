@@ -19,7 +19,7 @@
     </a>
     <!-- tablet and higher -->
     <% if current_user %>
-      <%= link_to current_user.name, logout_path, class: "header__link header__link--tablet" %>
+      <%= link_to current_user.name, dashboard_path, class: "header__link header__link--tablet" %>
     <% else %>
       <%= link_to "login/register", login_path, class: "header__link header__link--tablet" %>
     <% end %>

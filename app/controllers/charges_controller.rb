@@ -19,7 +19,7 @@ class ChargesController < ApplicationController
     )
 
     @posts.each do |post|
-      @order = Order.new(amount: post.price, description: post.title, customer_id: customer.id, source: charge.id, post_id: post.id)
+      @order = Order.new(amount: post.price, description: post.title, customer_id: customer.id, source: charge.id, post_id: post.id, user_id: current_user.id)
 
       if @order.save
         session.delete(:cart_id)

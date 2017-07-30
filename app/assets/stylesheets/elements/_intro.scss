@@ -43,3 +43,14 @@
   line-height: 19px;
   width: 100%;
 }
+
+.intro__icon {
+  width: 60px;
+  margin: 30px 0;
+  fill: map-get($color, "white");
+  fill-opacity: 0.2;
+
+  @include mediaquery("tablet") {
+    width: 90px;
+  }
+}

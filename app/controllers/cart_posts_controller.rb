@@ -16,7 +16,7 @@ class CartPostsController < ApplicationController
   end
 
   def destroy
-    @cart_post = CartPost.find_by_cart_id_and_post_id(params[:cart_id], params[:post_id])
+    @cart_post = CartPost.find_by_cart_id_and_post_id(session[:cart_id], params[:id])
 
     @cart_post.destroy
   end

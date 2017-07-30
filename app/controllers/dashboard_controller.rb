@@ -20,8 +20,14 @@ class DashboardController < ApplicationController
   end
 
   def earnings
-    @succesful_orders = Order.where(user_id: current_user.id).all
-    @total_earned = 0;
+    posts = Post.where(user_id: current_user.id).all
+    @succesful_orders = []
+    @total_earned = 0
+
+    posts.each do |post|
+      tsuccesful_orders = Order.where(post_id: post.id).order("created_at DESC")
+      @succesful_orders += tsuccesful_orders if tsuccesful_orders
+    end
 
     @succesful_orders.each do |succesful_order|
       @total_earned += succesful_order.amount

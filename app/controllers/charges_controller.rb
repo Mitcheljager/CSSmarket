@@ -1,4 +1,6 @@
 class ChargesController < ApplicationController
+  before_action :set_cart, only: [:create, :destroy]
+
   def new
     cart
   end
@@ -47,7 +49,7 @@ class ChargesController < ApplicationController
 
       @posts.each do |post|
         @total_price += post.price.to_i
-        @order_description += post.id + ", "
+        @order_description += post.title + ", "
       end
     end
 end

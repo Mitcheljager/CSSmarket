@@ -15,7 +15,9 @@ class PostsController < ApplicationController
     user = User.select("id", "name").find_by_id(@post.user_id)
     @post.user_name = user.name
 
-    @has_ordered = Order.find_by_post_id_and_user_id(@post.id, current_user.id)
+    if current_user
+      @has_ordered = Order.find_by_post_id_and_user_id(@post.id, current_user.id)
+    end
   end
 
   def new

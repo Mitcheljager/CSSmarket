@@ -6,34 +6,36 @@
       <span class="link__text">Settings</span>
     </span>
   </a>
-  <a class="dashboard__link" href="#">
+
+  <%= link_to dashboard_earnings_path, class: "dashboard__link" do %>
     <span class="link__name">
       <i class="material-icons">euro_symbol</i>
       <span class="link__text">Earnings</span>
     </span>
-    <span class="link__number">&euro; 150K</span>
-  </a>
-  <a class="dashboard__link" href="#">
+    <span class="link__number"></span>
+  <% end %>
+
+  <%= link_to dashboard_projects_path, class: "dashboard__link" do %>
     <span class="link__name">
       <i class="material-icons">developer_board</i>
       <span class="link__text">Projects</span>
     </span>
-    <span class="link__number">1</span>
-  </a>
+    <span class="link__number"></span>
+  <% end %>
 
   <%= link_to dashboard_downloads_path, class: "dashboard__link" do %>
     <span class="link__name">
       <i class="material-icons">file_download</i>
       <span class="link__text">Downloads</span>
     </span>
-    <span class="link__number">8</span>
+    <span class="link__number"></span>
   <% end %>
-  
-  <a class="dashboard__link" href="#">
+
+  <%= link_to new_post_path, class: "dashboard__link" do %>
     <span class="link__name">
       <i class="material-icons">file_upload</i>
       <span class="link__text">Upload</span>
     </span>
     <span class="link__number">+</span>
-  </a>
+  <% end %>
 </nav>

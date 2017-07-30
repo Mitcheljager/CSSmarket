@@ -18,4 +18,17 @@ class DashboardController < ApplicationController
 
     @total_posts = @posts ? @posts.count : 0
   end
+
+  def earnings
+    @succesful_orders = Order.where(user_id: current_user.id).all
+    @total_earned = 0;
+
+    @succesful_orders.each do |succesful_order|
+      @total_earned += succesful_order.amount
+    end
+  end
+
+  def projects
+    @posts = Post.where(user_id: current_user.id).all
+  end
 end

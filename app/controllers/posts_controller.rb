@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authorize, except: [:show, :index, :search]
+  before_action :authorize, except: [:show, :index, :search, :category]
 
   def index
     @posts = Post.all

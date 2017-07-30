@@ -39,17 +39,17 @@
     <a href="#" class="button button--white">Start selling</a>
   </span>
 
-  <%= link_to post_category_path("buttons"), class: "menu__link" do %>
+  <%= link_to post_category_path("buttons"), class: "menu__link #{active_class_for("menu__link--is-active", post_category_path("buttons"))}" do %>
     <i class="menu__icon material-icons">track_changes</i>
     <span class="menu__label">Buttons</span>
   <% end %>
 
-  <%= link_to post_category_path("menus"), class: "menu__link" do %>
+  <%= link_to post_category_path("menus"), class: "menu__link #{active_class_for("menu__link--is-active", post_category_path("menus"))}" do %>
     <i class="menu__icon material-icons">fingerprint</i>
     <span class="menu__label">Menus</span>
   <% end %>
 
-  <%= link_to post_category_path("forms"), class: "menu__link" do %>
+  <%= link_to post_category_path("forms"), class: "menu__link #{active_class_for("menu__link--is-active", post_category_path("forms"))}" do %>
     <i class="menu__icon material-icons">visibility</i>
     <span class="menu__label">Forms</span>
   <% end %>

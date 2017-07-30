@@ -70,7 +70,7 @@
     }
   }
 
-  &--active {
+  &--is-active {
     background: map-get($color, "light-grey");
 
     &::before {
@@ -121,7 +121,7 @@
     }
   }
 
-  .dashboard__link--active & {
+  .dashboard__link--is-active & {
     i {
       color: darken(map-get($color, "light-grey"), 40%);
     }
@@ -152,7 +152,7 @@
     display: block;
   }
 
-  .dashboard__link--active & {
+  .dashboard__link--is-active & {
     color: darken(map-get($color, "light-grey"), 20%);
     border: 1px solid darken(map-get($color, "light-grey"), 20%);
   }

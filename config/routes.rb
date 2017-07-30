@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :posts
+  get "/category/:name" => "posts#category", as: "post_category"
 
   get "search", to: "posts#search"
 

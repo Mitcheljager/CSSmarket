@@ -7,7 +7,7 @@
     </span>
   </a>
 
-  <%= link_to dashboard_earnings_path, class: "dashboard__link" do %>
+  <%= link_to dashboard_earnings_path, class: "dashboard__link #{active_class_for("dashboard__link--is-active", dashboard_earnings_path)}" do %>
     <span class="link__name">
       <i class="material-icons">euro_symbol</i>
       <span class="link__text">Earnings</span>
@@ -15,7 +15,7 @@
     <span class="link__number"></span>
   <% end %>
 
-  <%= link_to dashboard_projects_path, class: "dashboard__link" do %>
+  <%= link_to dashboard_projects_path, class: "dashboard__link #{active_class_for("dashboard__link--is-active", dashboard_projects_path)}" do %>
     <span class="link__name">
       <i class="material-icons">developer_board</i>
       <span class="link__text">Projects</span>
@@ -23,7 +23,7 @@
     <span class="link__number"></span>
   <% end %>
 
-  <%= link_to dashboard_downloads_path, class: "dashboard__link" do %>
+  <%= link_to dashboard_downloads_path, class: "dashboard__link #{active_class_for("dashboard__link--is-active", dashboard_downloads_path)}" do %>
     <span class="link__name">
       <i class="material-icons">file_download</i>
       <span class="link__text">Downloads</span>
@@ -31,7 +31,7 @@
     <span class="link__number"></span>
   <% end %>
 
-  <%= link_to new_post_path, class: "dashboard__link" do %>
+  <%= link_to new_post_path, class: "dashboard__link #{active_class_for("dashboard__link--is-active", new_post_path)}" do %>
     <span class="link__name">
       <i class="material-icons">file_upload</i>
       <span class="link__text">Upload</span>

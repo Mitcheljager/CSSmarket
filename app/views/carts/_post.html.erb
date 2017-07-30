@@ -6,7 +6,8 @@
       <% if post.user_name %>
         <span class="product__author"><%= post.user_name %></span>
       <% end %>
-      <a href="#" class="button button--grey button--small">Remove</a>
+
+      <%= link_to "Remove", cart_post_path(post.id), method: :delete , class: "button button--grey button--small" %>
     </div>
     <div class="product__price">&euro; <%= post.price %></div>
   </div>

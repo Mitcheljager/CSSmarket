@@ -19,7 +19,7 @@
     </a>
     <!-- tablet and higher -->
     <% if current_user %>
-      <%= link_to current_user.name, logout_path, class: "header__link header__link--tablet" %>
+      <%= link_to current_user.name, dashboard_path, class: "header__link header__link--tablet" %>
     <% else %>
       <%= link_to "login/register", login_path, class: "header__link header__link--tablet" %>
     <% end %>
@@ -75,15 +75,3 @@
     <a href="#" class="menu__link menu__link--extra">Login / Register</a>
   </div>
 </nav>
-
-<!-- popup -->
-<section class="popup">
-  <div class="popup__content">
-    <h2>Withdrawal</h2>
-    <p>You are about to transfer <strong>&euro; 256</strong> to your paypal account: <strong>paypal@paypal.com</strong></p>
-    <div class="popup__actions">
-      <a href="javascript:void(0)" class="button button--grey actions__button popup__close">Cancel</a>
-      <a href="javascript:void(0)" class="button button--gradient actions__button">withdrawal</a>
-    </div>
-  </div>
-</section>

@@ -3,15 +3,15 @@
 <%= form_for :post, url: posts_path do |f| %>
 
   <% if not @post.nil? and @post.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@post.errors.count, "error") %> prohibited
-      this post from being saved:</h2>
-    <ul>
-    <% @post.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited
+        this post from being saved:</h2>
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
   <% end %>
 
   <p>
@@ -21,7 +21,12 @@
 
   <p>
     <%= f.label :categories %><br>
-    <%= f.text_field :categories %>
+    <%= f.select :categories, options_for_select(
+                              [["Category...", ""],
+                              ["Buttons", "buttons"],
+                              ["Menus", "menus"],
+                              ["Forms", "forms"]],
+        ), {}, { :class => "" } %>
   </p>
 
   <p>
@@ -49,4 +54,4 @@
   </p>
 <% end %>
 
-<%= link_to '<- Back', posts_path %>
+<%= link_to "<- Back", posts_path %>

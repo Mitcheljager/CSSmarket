@@ -4,10 +4,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
-    @posts.each do |post|
-      user = User.select("id", "name").find_by_id(post.user_id)
-      post.user_name = user.name
-    end
+    user_id_to_name
   end
 
   def show
@@ -18,6 +15,12 @@ class PostsController < ApplicationController
     if current_user
       @has_ordered = Order.find_by_post_id_and_user_id(@post.id, current_user.id)
     end
+  end
+
+  def category
+    @posts = Post.where(categories: params[:name]).all
+
+    user_id_to_name
   end
 
   def new
@@ -45,5 +48,12 @@ class PostsController < ApplicationController
   private
     def post_params
       params.require(:post).permit :title, :content, :categories, :price, :image, :license
+    end
+
+    def user_id_to_name
+      @posts.each do |post|
+        user = User.select("id", "name").find_by_id(post.user_id)
+        post.user_name = user.name
+      end
     end
 end

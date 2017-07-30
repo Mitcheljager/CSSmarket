@@ -5,8 +5,8 @@
     <% end %>
 
     <!-- tablet and higher -->
-    <a href="#" class="header__link header__link--tablet">About</a>
-    <a href="#" class="header__link header__link--tablet">Sell</a>
+    <%= link_to "About", "/about", class: "header__link header__link--tablet" %>
+    <%= link_to "Sell", new_post_path, class: "header__link header__link--tablet" %>
   </div>
   <div class="header__column">
     <!-- mobile -->
@@ -38,38 +38,21 @@
     <span class="menu__label">Become a seller</span>
     <a href="#" class="button button--white">Start selling</a>
   </span>
-  <a class="menu__link" href="#">
+
+  <%= link_to post_category_path("buttons"), class: "menu__link" do %>
     <i class="menu__icon material-icons">track_changes</i>
     <span class="menu__label">Buttons</span>
-  </a>
-  <a class="menu__link menu__link--is-active" href="#">
+  <% end %>
+
+  <%= link_to post_category_path("menus"), class: "menu__link" do %>
     <i class="menu__icon material-icons">fingerprint</i>
     <span class="menu__label">Menus</span>
-  </a>
-  <a class="menu__link" href="#">
+  <% end %>
+
+  <%= link_to post_category_path("forms"), class: "menu__link" do %>
     <i class="menu__icon material-icons">visibility</i>
     <span class="menu__label">Forms</span>
-  </a>
-  <a class="menu__link" href="#">
-    <i class="menu__icon material-icons">track_changes</i>
-    <span class="menu__label">Buttons</span>
-  </a>
-  <a class="menu__link" href="#">
-    <i class="menu__icon material-icons">fingerprint</i>
-    <span class="menu__label">Menus</span>
-  </a>
-  <a class="menu__link" href="#">
-    <i class="menu__icon material-icons">visibility</i>
-    <span class="menu__label">Forms</span>
-  </a>
-  <a class="menu__link" href="#">
-    <i class="menu__icon material-icons">track_changes</i>
-    <span class="menu__label">Buttons</span>
-  </a>
-  <a class="menu__link" href="#">
-    <i class="menu__icon material-icons">fingerprint</i>
-    <span class="menu__label">Menus</span>
-  </a>
+  <% end %>
 
   <div class="menu__login">
     <a href="#" class="menu__link menu__link--extra">Login / Register</a>

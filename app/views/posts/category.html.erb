@@ -1,0 +1,8 @@
+<section class="projects">
+  <h3 class="projects__title">Category <%= params[:name] %></h3>
+  <div class="projects__parent">
+    <% @posts.each do |post| %>
+      <%= render post %>
+    <% end %>
+  </div>
+</section>

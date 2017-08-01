@@ -4,7 +4,7 @@
     <h2 class="intro__subtitle">Review your selection below and continue to our secure check out page.</h2>
 
     <div class="cart">
-      <div style="background: blue"><%= flash[:error] %></div>
+      <div class="cart__flash" style="<% if flash[:error] %>display:block;<% end %>"><%= flash[:error] %></div>
 
       <% @posts.each do |post| %>
         <%= render "carts/post", post: post %>

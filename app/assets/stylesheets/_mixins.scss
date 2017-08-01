@@ -52,6 +52,11 @@
   font-family: 'Open Sans', sans-serif;
   border: 0;
   cursor: pointer;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
 }
 
 @mixin dotdotdot() {

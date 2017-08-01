@@ -1,9 +1,10 @@
-<%= form_for :charges, url: charges_path do |f| %>
+<%= form_for :charge, url: charges_path do |f| %>
   <h1>Price: &euro; <%= @total_price %></h1>
 
-  <script class="stripe-button" src="https://checkout.stripe.com/checkout.js"
-          data-amount="<%= @total_price * 100 %>"
-          data-description="CSSMarket"
-          data-key="<%= Rails.application.secrets.stripe_publishable_key %>"
-          data-currency="eur"></script>
+  <%= f.text_field :card_number, placeholder: "Card Number", class: "" %>
+  <%= f.text_field :card_exp_month, placeholder: "Exp. Month", class: "" %>
+  <%= f.text_field :card_exp_year, placeholder: "Exp. Year", class: "" %>
+  <%= f.text_field :card_cvc, placeholder: "CVC", class: "" %>
+
+  <%= f.submit %>
 <% end %>

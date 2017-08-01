@@ -3,21 +3,38 @@ class ChargesController < ApplicationController
 
   def new
     cart
+
+    if @posts == []
+      redirect_to cart_path
+    end
   end
 
   def create
     cart
 
+    card = params[:charge]
+
+    source = Stripe::Source.create(
+      :type => "card",
+      :card => {
+        :number => params[:charge][:card_number],
+        :exp_month => params[:charge][:card_exp_month],
+        :exp_year => params[:charge][:card_exp_year],
+        :cvc => params[:charge][:card_cvc]
+      },
+      :currency => "eur"
+    )
+
     customer = Stripe::Customer.create(
-      :email => params[:stripeEmail],
-      :source  => params[:stripeToken]
+      :email => current_user.email,
+      :source  => source
     )
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
       :amount      => @total_price * 100,
       :description => @order_description,
-      :currency    => 'eur'
+      :currency    => source.currency
     )
 
     @posts.each do |post|

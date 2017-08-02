@@ -1,4 +1,4 @@
-<h1>Login</h1>
+<!-- <h1>Login</h1>
 
 <%= form_tag '/login' do %>
 
@@ -18,4 +18,58 @@
   Password Confirmation: <%= f.password_field :password_confirmation %>
   <%= f.submit "Submit" %>
 
-<% end %>
+<% end %> -->
+
+<section class="login">
+
+  <div class="login__wrapper">
+    <div class="login__form">
+      <h2>Login</h2>
+      <%= form_tag '/login', class: "form content__subject" do %>
+        <div class="form__parent form__parent--full">
+          <%= text_field_tag :email, "", class: "form__input", placeholder: " " %>
+          <span class="form__label">Email</span>
+        </div>
+        <div class="form__parent form__parent--full">
+          <%= password_field_tag :password, "", class: "form__input", placeholder: " " %>
+          <span class="form__label">Password</span>
+        </div>
+        <%= submit_tag "Login", class: "button button--gradient" %>
+      <% end %>
+    </div>
+    <div class="login__image">
+      <h2>Need an account?</h2>
+      <h3>Then lets create one</h3>
+    </div>
+  </div>
+
+  <!-- <form class="form content__subject">
+    <div class="form__parent">
+      <input class="form__input" type="text" name="username" value="Admin" placeholder=" " />
+      <span class="form__label">Username</span>
+    </div>
+    <div class="form__parent">
+      <input class="form__input" type="text" name="name" placeholder=" " />
+      <span class="form__label">Name</span>
+    </div>
+    <div class="form__parent">
+      <input class="form__input" type="email" name="email" placeholder=" " />
+      <span class="form__label">Email address</span>
+    </div>
+    <div class="form__parent">
+      <input class="form__input" type="email" name="paypal" placeholder=" " />
+      <span class="form__label">Paypal Account</span>
+    </div>
+    <div class="form__parent">
+      <input class="form__input" type="password" name="oldPass" placeholder=" " />
+      <span class="form__label">Current password</span>
+    </div>
+    <div class="form__parent">
+      <input class="form__input" type="password" name="newPass" placeholder=" " />
+      <span class="form__label">New Password</span>
+    </div>
+    <div class="form__parent">
+      <button class="button button--grey">Save</button>
+    </div>
+  </form> -->
+</section>

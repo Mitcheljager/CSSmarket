@@ -1,0 +1,30 @@
+.login {
+  @include maxwidth(50px);
+  background: map-get($color, "brand-primary-second");
+  min-height: calc(100vh - 169px);
+}
+
+.login__wrapper {
+  background: map-get($color, "white");
+  box-shadow: 0 0 10px rgba(map-get($color, "black"), 0.25);
+  border-radius: 3px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.login__form {
+  width: 100%;
+  max-width: 290px;
+  padding: 25px;
+}
+
+.login__image {
+  @include linear-gradient-b(45deg, rgba(map-get($color, "brand-secondary"), 1), rgba(map-get($color, "brand-secondary-second"), 1));
+  width: 100%;
+  padding: 25px;
+  color: map-get($color, "white");
+}

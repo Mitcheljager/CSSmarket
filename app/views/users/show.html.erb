@@ -4,13 +4,14 @@
 </section>
 
 <div class="projects">
-  <h3 class="projects__title">12 Projects</h3>
-  <div class="projects__parent">
-    <% @posts.each do |post| %>
-      <%= render "posts/post", post: post %>
+	<% @posts.each do |post| %>
+	<h3 class="projects__title">12 Projects</h3>
+	<div class="projects__parent">
+		<%= render "posts/post", post: post %>
+	</div>
     <% end %>
     <% if (@posts.blank?) %>
-      Niets
+      <h2 class="projects__title projects__title--centerd">This user hasn't post anything yet</h2>
+	  <a href="#" class="button button--ghost">Browse projects</a>
     <% end %>
-  </div>
 </div>

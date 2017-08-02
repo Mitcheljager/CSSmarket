@@ -4,14 +4,14 @@
 </section>
 
 <div class="projects">
-	<% @posts.each do |post| %>
-	<h3 class="projects__title">12 Projects</h3>
-	<div class="projects__parent">
-		<%= render "posts/post", post: post %>
-	</div>
-    <% end %>
-    <% if (@posts.blank?) %>
-      <h2 class="projects__title projects__title--centerd">This user hasn't post anything yet</h2>
-	  <a href="#" class="button button--ghost">Browse projects</a>
-    <% end %>
+  <% @posts.each do |post| %>
+  <h3 class="projects__title">12 Projects</h3>
+  <div class="projects__parent">
+    <%= render "posts/post", post: post %>
+  </div>
+  <% end %>
+  <% if (@posts.blank?) %>
+  <h2 class="projects__title projects__title--centerd">This user hasn't post anything yet</h2>
+  <a href="#" class="button button--ghost">Browse projects</a>
+  <% end %>
 </div>

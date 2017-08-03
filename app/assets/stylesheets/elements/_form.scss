@@ -106,7 +106,7 @@
   transition: all 150ms ease;
 
   &--light {
-    color: darken(map-get($color, "white"), 10%);
+    color: rgba(map-get($color, "white"), 0.7);
     opacity: 0.6;
   }
 

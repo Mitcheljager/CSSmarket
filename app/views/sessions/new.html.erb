@@ -1,21 +1,42 @@
-<h1>Login</h1>
-
-<%= form_tag '/login' do %>
-
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
-
-<% end %>
-
-<h1>Register</h1>
-
-<%= form_for :user, url: '/users' do |f| %>
-
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
-
-<% end %>
+<section class="login">
+  <div class="login__wrapper">
+    <div class="login__login-box">
+      <h2>Login</h2>
+      <%= form_tag '/login', class: "form content__subject" do %>
+        <div class="form__parent form__parent--full">
+          <%= text_field_tag :email, "", class: "form__input", placeholder: " " %>
+          <span class="form__label">Email</span>
+        </div>
+        <div class="form__parent form__parent--full">
+          <%= password_field_tag :password, "", class: "form__input", placeholder: " " %>
+          <span class="form__label">Password</span>
+        </div>
+        <%= submit_tag "Login", class: "button button--gradient" %>
+      <% end %>
+      <p>Forgot password? Send an email to <a href="mailto:account@cssmarket.net">account@cssmarket.net</a></p>
+    </div>
+    <div class="login__register-box">
+      <h2>Need an account?</h2>
+      <%= form_for :user, url: '/users', html: { class: "form content__subject" } do |f| %>
+        <div class="form__parent">
+          <%= f.text_field :name, class: "form__input form__input--light", placeholder: " " %>
+          <span class="form__label form__label--light">Username</span>
+        </div>
+        <div class="form__parent">
+          <%= f.text_field :email, class: "form__input form__input--light", placeholder: " " %>
+          <span class="form__label form__label--light">Email</span>
+        </div>
+        <div class="form__parent">
+          <%= f.password_field :password, class: "form__input form__input--light", placeholder: " " %>
+          <span class="form__label form__label--light">Password</span>
+        </div>
+        <div class="form__parent">
+          <%= f.password_field :password_confirmation, class: "form__input form__input--light", placeholder: " " %>
+          <span class="form__label form__label--light">Re-type password</span>
+        </div>
+        <%= f.submit "Register", class: "button button--white" %>
+      <% end %>
+      <p>By creating an account you agree with the <a href="#" class="white">Terms of use</a> and <a href="#" class="white">Privacy policy</a>.</p>
+    </div>
+  </div>
+</section>

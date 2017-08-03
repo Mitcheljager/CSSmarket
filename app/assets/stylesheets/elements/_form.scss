@@ -60,6 +60,12 @@
   border: 0;
   border-bottom: 1px solid map-get($color, "light-grey");
   padding: 10px 0;
+  background: none;
+
+  &--light {
+    color: map-get($color, "white");
+    border-bottom: 1px solid rgba(map-get($color, "light-grey"), 0.6);
+  }
 
   &--textarea {
     resize: none;
@@ -68,6 +74,7 @@
     font-size: 16px;
     font-weight: 400;
     color: map-get($color, "brand-primary");
+    background: none;
   }
 
   &:not(:placeholder-shown) {
@@ -97,6 +104,11 @@
   transform: translate(0, -50%);
   pointer-events: none;
   transition: all 150ms ease;
+
+  &--light {
+    color: darken(map-get($color, "white"), 10%);
+    opacity: 0.6;
+  }
 
   &--textarea {
     top: 20px;

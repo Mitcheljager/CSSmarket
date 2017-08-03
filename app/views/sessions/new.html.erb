@@ -23,7 +23,7 @@
 <section class="login">
 
   <div class="login__wrapper">
-    <div class="login__form">
+    <div class="login__login-box">
       <h2>Login</h2>
       <%= form_tag '/login', class: "form content__subject" do %>
         <div class="form__parent form__parent--full">
@@ -36,10 +36,29 @@
         </div>
         <%= submit_tag "Login", class: "button button--gradient" %>
       <% end %>
+      <p>Forgot password? Send an email to <a href="mailto:account@cssmarket.net">account@cssmarket.net</a></p>
     </div>
-    <div class="login__image">
+    <div class="login__register-box">
       <h2>Need an account?</h2>
-      <h3>Then lets create one</h3>
+      <%= form_for :user, url: '/users', html: { class: "form content__subject" } do |f| %>
+        <div class="form__parent">
+          <%= f.text_field :name, class: "form__input form__input--light", placeholder: " " %>
+          <span class="form__label form__label--light">Username</span>
+        </div>
+        <div class="form__parent">
+          <%= f.text_field :email, class: "form__input form__input--light", placeholder: " " %>
+          <span class="form__label form__label--light">Email</span>
+        </div>
+        <div class="form__parent">
+          <%= f.password_field :password, class: "form__input form__input--light", placeholder: " " %>
+          <span class="form__label form__label--light">Password</span>
+        </div>
+        <div class="form__parent">
+          <%= f.password_field :password_confirmation, class: "form__input form__input--light", placeholder: " " %>
+          <span class="form__label form__label--light">Re-type password</span>
+        </div>
+        <%= f.submit "Register", class: "button button--white" %>
+      <% end %>
     </div>
   </div>
 

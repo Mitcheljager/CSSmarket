@@ -62,6 +62,11 @@
   padding: 10px 0;
   background: none;
 
+  &--light {
+    color: map-get($color, "white");
+    border-bottom: 1px solid rgba(map-get($color, "light-grey"), 0.6);
+  }
+
   &--textarea {
     resize: none;
     height: 200px;
@@ -99,6 +104,11 @@
   transform: translate(0, -50%);
   pointer-events: none;
   transition: all 150ms ease;
+
+  &--light {
+    color: darken(map-get($color, "white"), 10%);
+    opacity: 0.6;
+  }
 
   &--textarea {
     top: 20px;

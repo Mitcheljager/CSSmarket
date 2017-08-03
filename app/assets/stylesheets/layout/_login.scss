@@ -1,30 +1,46 @@
 .login {
-  @include maxwidth(50px);
-  background: map-get($color, "brand-primary-second");
+  @include maxwidth(30px);
+  background: map-get($color, "light-grey");
   min-height: calc(100vh - 169px);
+
+  @include mediaquery("tablet") {
+    @include maxwidth(50px);
+  }
 }
 
 .login__wrapper {
   background: map-get($color, "white");
-  box-shadow: 0 0 10px rgba(map-get($color, "black"), 0.25);
+  box-shadow: 0 0 10px rgba(map-get($color, "black"), 0.15);
   border-radius: 3px;
   width: 100%;
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   overflow: hidden;
+
+  @include mediaquery("tablet") {
+    flex-direction: row;
+  }
 }
 
-.login__form {
+.login__login-box {
   width: 100%;
-  max-width: 290px;
   padding: 25px;
+
+  @include mediaquery("tablet") {
+    max-width: 320px;
+    padding: 35px;
+  }
 }
 
-.login__image {
+.login__register-box {
   @include linear-gradient-b(45deg, rgba(map-get($color, "brand-secondary"), 1), rgba(map-get($color, "brand-secondary-second"), 1));
   width: 100%;
-  padding: 25px;
   color: map-get($color, "white");
+  padding: 25px;
+
+  @include mediaquery("tablet") {
+    padding: 35px;
+  }
 }

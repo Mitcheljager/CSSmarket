@@ -1,27 +1,4 @@
-<!-- <h1>Login</h1>
-
-<%= form_tag '/login' do %>
-
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
-
-<% end %>
-
-<h1>Register</h1>
-
-<%= form_for :user, url: '/users' do |f| %>
-
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
-
-<% end %> -->
-
 <section class="login">
-
   <div class="login__wrapper">
     <div class="login__login-box">
       <h2>Login</h2>
@@ -61,34 +38,4 @@
       <% end %>
     </div>
   </div>
-
-  <!-- <form class="form content__subject">
-    <div class="form__parent">
-      <input class="form__input" type="text" name="username" value="Admin" placeholder=" " />
-      <span class="form__label">Username</span>
-    </div>
-    <div class="form__parent">
-      <input class="form__input" type="text" name="name" placeholder=" " />
-      <span class="form__label">Name</span>
-    </div>
-    <div class="form__parent">
-      <input class="form__input" type="email" name="email" placeholder=" " />
-      <span class="form__label">Email address</span>
-    </div>
-    <div class="form__parent">
-      <input class="form__input" type="email" name="paypal" placeholder=" " />
-      <span class="form__label">Paypal Account</span>
-    </div>
-    <div class="form__parent">
-      <input class="form__input" type="password" name="oldPass" placeholder=" " />
-      <span class="form__label">Current password</span>
-    </div>
-    <div class="form__parent">
-      <input class="form__input" type="password" name="newPass" placeholder=" " />
-      <span class="form__label">New Password</span>
-    </div>
-    <div class="form__parent">
-      <button class="button button--grey">Save</button>
-    </div>
-  </form> -->
 </section>

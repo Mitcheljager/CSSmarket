@@ -79,6 +79,10 @@ h3 {
 a {
   color: map-get($color, "brand-secondary-second");
   font-weight: 600;
+
+  &.white {
+    color: map-get($color, "white");
+  }
 }
 
 button {

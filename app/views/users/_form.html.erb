@@ -1,0 +1,30 @@
+<%= form_for @user, url: '/users', html: { class: "form content__subject" } do |f| %>
+
+  <% if flash[:user_error] %>
+    <div style="flex: 0 0 100%">
+      <%= flash[:user_error] %>
+    </div>
+  <% end %>
+
+  <div class="form__parent">
+    <%= f.text_field :name, class: "form__input form__input--light", placeholder: " " %>
+    <%= f.label :name, "Username", class: "form__label form__label--light" %>
+  </div>
+
+  <div class="form__parent">
+    <%= f.text_field :email, class: "form__input form__input--light", placeholder: " " %>
+    <%= f.label :email, class: "form__label form__label--light" %>
+  </div>
+
+  <div class="form__parent">
+    <%= f.password_field :password, class: "form__input form__input--light", placeholder: " " %>
+    <%= f.label :password, class: "form__label form__label--light" %>
+  </div>
+
+  <div class="form__parent">
+    <%= f.password_field :password_confirmation, class: "form__input form__input--light", placeholder: " " %>
+    <%= f.label :password_confirmation, "Re-type password", class: "form__label form__label--light" %>
+  </div>
+
+  <%= f.submit "Register", class: "button button--white" %>
+<% end %>

@@ -1,0 +1,19 @@
+<%= form_tag "/login", class: "form content__subject" do %>
+  <% if flash[:sessions_error] %>
+    <div>
+      <%= flash[:sessions_error] %>
+    </div>
+  <% end %>
+
+  <div class="form__parent form__parent--full">
+    <%= text_field_tag :email, "", class: "form__input", placeholder: " " %>
+    <%= label_tag :email, "Email", class: "form__label" %>
+  </div>
+
+  <div class="form__parent form__parent--full">
+    <%= password_field_tag :password, "", class: "form__input", placeholder: " " %>
+    <%= label_tag :password, "Password", class: "form__label" %>
+  </div>
+
+  <%= submit_tag "Login", class: "button button--gradient" %>
+<% end %>

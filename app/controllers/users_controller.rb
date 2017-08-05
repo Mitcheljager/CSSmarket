@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
-      render "new"
+      redirect_to login_path, flash: { user_error: "A field was invalid" }
     end
   end
 

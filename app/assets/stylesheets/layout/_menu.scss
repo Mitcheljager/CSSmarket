@@ -49,6 +49,10 @@
     display: none;
   }
 
+  &--flex {
+    display: flex;
+  }
+
   .menu--is-moving-in & {
     right: 0;
     transition: right 300ms ease;

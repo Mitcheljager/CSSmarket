@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 
   def category
     @posts = Post.where(categories: params[:name]).all
+    @posts_total = @posts ? @posts.count : 0
 
     user_id_to_name
   end

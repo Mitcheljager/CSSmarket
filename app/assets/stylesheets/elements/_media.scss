@@ -64,8 +64,6 @@
 
   path,
   circle {
-    fill: none;
-    stroke: map-get($color, "white");
-    stroke-width: 1px;
+    fill: map-get($color, "light-grey");
   }
 }

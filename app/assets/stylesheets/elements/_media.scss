@@ -64,6 +64,6 @@
 
   path,
   circle {
-    fill: rgba(map-get($color, "light-grey"), 1);
+    fill: map-get($color, "light-grey");
   }
 }

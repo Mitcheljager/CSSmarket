@@ -2,11 +2,9 @@
   @include maxwidth(30px);
   display: flex;
   flex-direction: row;
-  min-height: calc(100vh - 59px);
 
   @include mediaquery("tablet") {
     @include maxwidth(50px);
-    min-height: calc(100vh - 169px);
   }
 }
 

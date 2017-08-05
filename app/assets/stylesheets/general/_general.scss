@@ -24,6 +24,9 @@ body {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   padding-top: map-get($element, "header-height");
 
   @include mediaquery("tablet") {

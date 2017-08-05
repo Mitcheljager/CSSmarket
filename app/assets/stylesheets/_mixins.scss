@@ -7,7 +7,6 @@
 }
 
 @mixin maxwidth($top: 0, $bottom: $top, $size: $max-width) {
-  margin: 0 auto;
   padding: $top 18px $bottom;
 
   @media (min-width: $size + 40) {

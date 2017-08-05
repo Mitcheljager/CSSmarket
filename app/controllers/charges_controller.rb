@@ -1,5 +1,6 @@
 class ChargesController < ApplicationController
   before_action :set_cart, only: [:create, :destroy]
+  before_action :authorize
 
   def new
     cart

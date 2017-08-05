@@ -20,6 +20,17 @@ class ApplicationController < ActionController::Base
   end
   helper_method :shopping_cart_total
 
+  def check_user_level(user_level)
+    if current_user
+      if current_user.level == user_level
+        return true
+      else
+        return false
+      end
+    end
+  end
+  helper_method :check_user_level
+
   private
     def set_cart
       @cart = Cart.find(session[:cart_id])

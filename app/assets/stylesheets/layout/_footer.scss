@@ -1,5 +1,3 @@
-@include griddify(4, 2, map-get($element, "project-spacing"), 1.25, footer__parent, footer__item);
-
 .footer {
   @include maxwidth(50px);
   background: map-get($color, "brand-primary");
@@ -7,10 +5,104 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
-.footer__parent {
+.footer__item {
+  width: 100%;
+
+  &--column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    img {
+      margin: 0 0 25px;
+    }
+  }
+
+  &--center {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.footer__social,
+.footer__logo {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.footer__follow {
+  width: 35px;
+  height: 35px;
+  background: map-get($color, "white");
+  color: map-get($color, "white");
+  text-decoration: none;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  transition: transform 300ms ease;
+
+  svg {
+    fill: map-get($color, "white");
+    transition: transform 300ms ease;
+  }
+
+  &--facebook {
+    background: map-get($color, "facebook");
+
+    svg {
+      width: 10px;
+    }
+  }
+
+  &--twitter {
+    background: map-get($color, "twitter");
+
+    svg {
+      width: 22px;
+    }
+  }
+
+  &--instagram {
+    background: radial-gradient(circle at 33% 100%, map-get($color, "instagram1") 4%, map-get($color, "instagram2") 30%, map-get($color, "instagram3") 62%, map-get($color, "instagram4") 85%, map-get($color, "instagram5"));
+
+    svg {
+      width: 20px;
+    }
+  }
+
+  &:hover,
+  &:active {
+    transform: scale(1.08);
+
+    svg {
+      transform: scale(1.08);
+    }
+  }
+}
+
+.footer__links {
+  margin: 25px 0 0;
+  text-align: center;
+}
+
+.footer__link {
+  color: rgba(map-get($color, "light-grey"), 0.25);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 5px;
+  transition: all 300ms ease;
+
+  &:hover,
+  &:active {
+    color: rgba(map-get($color, "light-grey"), 1);
+  }
 }

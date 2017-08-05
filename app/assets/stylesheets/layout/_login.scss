@@ -1,7 +1,6 @@
 .login {
   @include maxwidth(30px);
   background: map-get($color, "light-grey");
-  min-height: calc(100vh - 169px);
 
   @include mediaquery("tablet") {
     @include maxwidth(50px);

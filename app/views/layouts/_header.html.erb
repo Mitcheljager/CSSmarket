@@ -36,10 +36,30 @@
   <span class="menu__close">
     <i class="menu__icon menu__icon--close material-icons">arrow_forward</i>
   </span>
-  <span class="menu__link menu__link--seller">
-    <span class="menu__label">Become a seller</span>
-    <a href="#" class="button button--white">Start selling</a>
-  </span>
+
+  <% if check_user_level(0) %>
+    <span class="menu__link menu__link--seller">
+      <span class="menu__label">Become a seller</span>
+      <a href="#" class="button button--white">Start selling</a>
+    </span>
+  <% elsif !current_user %>
+    <span class="menu__link menu__link--seller">
+      <span class="menu__label">Become a seller</span>
+      <a href="#" class="button button--white">Start selling</a>
+    </span>
+  <% else %>
+    <span class="menu__link menu__link--seller">
+      <span class="menu__label">Earnings</span>
+      <span class="menu__earnings">&euro; 6832</span>
+    </span>
+  <% end %>
+
+  <% if check_user_level(100) %>
+    <%= link_to admin_path, class: "menu__link" do %>
+      <i class="menu__icon material-icons">dashboard</i>
+      <span class="menu__label">Admin</span>
+    <% end %>
+  <% end %>
 
   <%= link_to post_category_path("buttons"), class: "menu__link #{active_class_for("menu__link--is-active", post_category_path("buttons"))}" do %>
     <i class="menu__icon material-icons">track_changes</i>

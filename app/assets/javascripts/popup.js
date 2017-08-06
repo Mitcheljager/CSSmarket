@@ -1,11 +1,11 @@
-$('.content__button').on("click", function() {
+$(document).on("click", ".content__button", function() {
   $(".popup").addClass("popup--animation-in");
 
   //Prevent scrolling
   $("body, html").addClass('body--no-scroll');
 });
 
-$('.popup__close').on("click", function() {
+$(document).on("click", ".popup__close", function() {
   $(".popup").removeClass("popup--animation-in");
 
   //Add scrolling

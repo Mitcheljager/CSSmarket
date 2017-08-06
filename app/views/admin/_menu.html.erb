@@ -1,0 +1,29 @@
+<nav class="dashboard__menu">
+  <%= link_to admin_path, class: "dashboard__link #{active_class_for("dashboard__link--is-active", admin_path)}" do %>
+    <span class="link__name">
+      <i class="material-icons">developer_board</i>
+      <span class="link__text">Dashboard</span>
+    </span>
+  <% end %>
+
+  <%= link_to admin_users_path, class: "dashboard__link #{active_class_for("dashboard__link--is-active", admin_users_path)}" do %>
+    <span class="link__name">
+      <i class="material-icons">person</i>
+      <span class="link__text">Users</span>
+    </span>
+  <% end %>
+
+  <%= link_to admin_orders_path, class: "dashboard__link #{active_class_for("dashboard__link--is-active", admin_orders_path)}" do %>
+    <span class="link__name">
+      <i class="material-icons">euro_symbol</i>
+      <span class="link__text">Orders</span>
+    </span>
+  <% end %>
+
+  <%= link_to admin_posts_path, class: "dashboard__link #{active_class_for("dashboard__link--is-active", admin_posts_path)}" do %>
+    <span class="link__name">
+      <i class="material-icons">subject</i>
+      <span class="link__text">Posts</span>
+    </span>
+  <% end %>
+</nav>

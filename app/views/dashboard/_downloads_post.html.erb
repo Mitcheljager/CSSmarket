@@ -10,6 +10,8 @@
       <span class="project__author"><%= post.user_name %></span>
     <% end %>
 
-    <a href="#" class="project__price"><i class="material-icons">file_download</i></a>
+    <%= link_to "#{post.file}", class: "project__price" do %>
+      <i class="material-icons">file_download</i>
+    <% end %>
   </div>
 </div>

@@ -14,7 +14,7 @@
       <i class="header__icon material-icons">shopping_cart</i>
       <span class="icon__label"><%= shopping_cart_total %></span>
     <% end %>
-    <a href="javascript:void(0)" class="header__link">
+    <a href="javascript:void(0)" class="header__link" data-menu-toggle>
       <i class="header__icon header__icon--mobile-menu material-icons">menu</i>
     </a>
     <!-- tablet and higher -->
@@ -30,10 +30,10 @@
   </div>
 </header>
 
-<section class="overlay"></section>
+<section class="overlay" data-overlay data-menu-toggle></section>
 
-<nav class="menu">
-  <span class="menu__close">
+<nav class="menu" data-menu>
+  <span class="menu__close" data-menu-toggle>
     <i class="menu__icon menu__icon--close material-icons">arrow_forward</i>
   </span>
 

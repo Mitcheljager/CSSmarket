@@ -1,0 +1,73 @@
+.article {
+  padding: 30px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+
+  @include mediaquery("tablet") {
+    padding: 50px 20;
+  }
+}
+
+.article__sell {
+  background: map-get($color, "white");
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(map-get($color, "black"), 0.15);
+  border-radius: 3px;
+}
+
+.sell__steps {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 45px 0 0;
+}
+
+.steps__action {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+
+  &:first-of-type {
+    padding: 0 25px 0 0;
+  }
+
+  &:last-of-type {
+    padding: 0 0 0 25px;
+    border-left: 1px solid map-get($color, "light-grey");
+  }
+
+  p {
+    margin: 10px 0;
+  }
+}
+
+.step__number {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid darken(map-get($color, "light-grey"), 10%);
+  font-weight: 400;
+  color: darken(map-get($color, "light-grey"), 20%);
+}
+
+.step__title {
+  padding: 15px 0 0;
+  font-weight: 600;
+}
+
+.step__button {
+  margin: 15px 0;
+  display: table;
+}
+
+.step__form {
+  margin: 20px 0 0;
+
+  &--higher {
+    margin: 30px 0 0;
+  }
+}

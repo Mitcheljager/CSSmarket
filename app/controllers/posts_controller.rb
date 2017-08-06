@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authorize, except: [:show, :index, :search, :category]
   before_action only: [:new] do
     if check_user_level(0)
-      redirect_to admin_path
+      redirect_to dashboard_path
     end
   end
 

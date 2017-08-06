@@ -45,8 +45,16 @@
         </p>
 
         <p>
+        </p>
+
+        <p>
           <%= f.label :image %><br>
-          <%= f.text_field :image %>
+          <%= f.file_field :image, accept: "image/jpeg, image/jpg, image/png" %>
+        </p>
+
+        <p>
+          <%= f.label :file %><br>
+          <%= f.file_field :file, accept: "application/zip" %>
         </p>
 
         <p>

@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.order("created_at DESC").all
 
     user_id_to_name
   end
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit :title, :content, :categories, :price, :image, :license
+      params.require(:post).permit :title, :content, :categories, :price, :image, :file, :license
     end
 
     def user_id_to_name

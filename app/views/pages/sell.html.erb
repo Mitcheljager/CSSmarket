@@ -1,0 +1,78 @@
+<article class="article">
+  <h1>Become a seller</h1>
+  <p>Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do enjoyment defective objection or we if favourite. At wonder afford so danger cannot former seeing. Power visit charm money add heard new other put. Attended no indulged marriage is to judgment offering landlord.</p>
+  <div class="article__sell">
+    <h2>Lets sell some awesome projects</h2>
+    <div class="sell__steps">
+      <div class="steps__action steps__action--one">
+        <% if current_user %>
+          <div class="steps__overlay">
+            <div class="step__number step__number--completed"><i class="material-icons">check</i></div>
+          </div>
+        <% end %>
+        <div class="step__number">1</div>
+        <span class="step__title">Login in to your account</span>
+        <p>To become a seller you have to login in to your account. Don't have an account? Dont worry creating an account is free and easy.</p>
+        <%= form_tag "/login", class: "form step__form" do %>
+          <% if flash[:sessions_error] %>
+            <div>
+              <%= flash[:sessions_error] %>
+            </div>
+          <% end %>
+
+          <div class="form__parent form__parent--full">
+            <%= text_field_tag :email, "", class: "form__input", placeholder: " " %>
+            <%= label_tag :email, "Email", class: "form__label" %>
+          </div>
+
+          <div class="form__parent form__parent--full">
+            <%= password_field_tag :password, "", class: "form__input", placeholder: " " %>
+            <%= label_tag :password, "Password", class: "form__label" %>
+          </div>
+
+          <%= submit_tag "Login", class: "button button--gradient" %>
+        <% end %>
+      </div>
+      <div class="steps__action steps__action--two">
+        <% if !current_user %>
+          <div class="steps__overlay">
+            <div class="step__number step__number--otherStep">
+              <i class="material-icons">person_pin</i>
+            </div>
+            <span class="step__title">You haven't completed step 1</span>
+          </div>
+        <% elsif !check_user_level(0) %>
+          <div class="steps__overlay">
+            <div class="step__number step__number--completed"><i class="material-icons">check</i></div>
+          </div>
+        <% end %>
+        <div class="step__number">2</div>
+        <span class="step__title">Submit your "become a seller" code</span>
+        <p>Don't have a code? Send some work to <a href="mailto:account@cssmarket.net">account@cssmarket.net</a>, and maybe you will get a sellers code.</p>
+        <p>By clicking on "become a seller" you agree with the <a href="#">seller agreements</a>.</p>
+        <%= form_tag "/sell", class: "form step__form step__form--higher" do %>
+
+          <% if flash[:sessions_error] %>
+            <div>
+              <%= flash[:sessions_error] %>
+            </div>
+          <% end %>
+
+          <div class="form__parent form__parent--full">
+            <%= text_field_tag :number, "", class: "form__input", placeholder: " " %>
+            <%= label_tag :number, "Seller code", class: "form__label" %>
+          </div>
+
+          <%= submit_tag "Become a seller", class: "button button--gradient" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <p>Departure so attention pronounce satisfied daughters am. But shy tedious pressed studied opinion entered windows off. Advantage dependent suspicion convinced provision him yet. Timed balls match at by rooms we. Fat not boy neat left had with past here call. Court nay merit few nor party learn. Why our year her eyes know even how. Mr immediate remaining conveying allowance do or.</p>
+  <p>Mr do raising article general norland my hastily. Its companions say uncommonly pianoforte favourable. Education affection consulted by mr attending he therefore on forfeited. High way more far feet kind evil play led. Sometimes furnished collected add for resources attention. Norland an by minuter enquire it general on towards forming. Adapted mrs totally company two yet conduct men.</p>
+  <p>Written enquire painful ye to offices forming it. Then so does over sent dull on. Likewise offended humoured mrs fat trifling answered. On ye position greatest so desirous. So wound stood guest weeks no terms up ought. By so these am so rapid blush songs begin. Nor but mean time one over.</p>
+  <p>Acceptance middletons me if discretion boisterous travelling an. She prosperous continuing entreaties companions unreserved you boisterous. Middleton sportsmen sir now cordially ask additions for. You ten occasional saw everything but conviction. Daughter returned quitting few are day advanced branched. Do enjoyment defective objection or we if favourite. At wonder afford so danger cannot former seeing. Power visit charm money add heard new other put. Attended no indulged marriage is to judgment offering landlord.</p>
+  <p>Departure so attention pronounce satisfied daughters am. But shy tedious pressed studied opinion entered windows off. Advantage dependent suspicion convinced provision him yet. Timed balls match at by rooms we. Fat not boy neat left had with past here call. Court nay merit few nor party learn. Why our year her eyes know even how. Mr immediate remaining conveying allowance do or.</p>
+  <p>Mr do raising article general norland my hastily. Its companions say uncommonly pianoforte favourable. Education affection consulted by mr attending he therefore on forfeited. High way more far feet kind evil play led. Sometimes furnished collected add for resources attention. Norland an by minuter enquire it general on towards forming. Adapted mrs totally company two yet conduct men.</p>
+  <p>Written enquire painful ye to offices forming it. Then so does over sent dull on. Likewise offended humoured mrs fat trifling answered. On ye position greatest so desirous. So wound stood guest weeks no terms up ought. By so these am so rapid blush songs begin. Nor but mean time one over.</p>
+</article>

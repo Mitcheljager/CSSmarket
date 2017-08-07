@@ -32,6 +32,7 @@
 .intro__title {
   margin-bottom: 5px;
   width: 100%;
+  color: map-get($color, "white");
 }
 
 .intro__subtitle {

@@ -5,6 +5,11 @@
     <h2>Lets sell some awesome projects</h2>
     <div class="sell__steps">
       <div class="steps__action steps__action--one">
+        <% if current_user %>
+          <div class="steps__overlay">
+            <div class="step__number step__number--completed"><i class="material-icons">check</i></div>
+          </div>
+        <% end %>
         <div class="step__number">1</div>
         <span class="step__title">Login in to your account</span>
         <p>To become a seller you have to login in to your account. Don't have an account? Dont worry creating an account is free and easy.</p>
@@ -29,6 +34,18 @@
         <% end %>
       </div>
       <div class="steps__action steps__action--two">
+        <% if !current_user %>
+          <div class="steps__overlay">
+            <div class="step__number step__number--otherStep">
+              <i class="material-icons">person_pin</i>
+            </div>
+            <span class="step__title">You haven't completed step 1</span>
+          </div>
+        <% elsif !check_user_level(0) %>
+          <div class="steps__overlay">
+            <div class="step__number step__number--completed"><i class="material-icons">check</i></div>
+          </div>
+        <% end %>
         <div class="step__number">2</div>
         <span class="step__title">Submit your "become a seller" code</span>
         <p>Don't have a code? Send some work to <a href="mailto:account@cssmarket.net">account@cssmarket.net</a>, and maybe you will get a sellers code.</p>
@@ -46,7 +63,7 @@
             <%= label_tag :number, "Seller code", class: "form__label" %>
           </div>
 
-          <%= submit_tag "Become a seller", class: "button button--grey" %>
+          <%= submit_tag "Become a seller", class: "button button--gradient" %>
         <% end %>
       </div>
     </div>

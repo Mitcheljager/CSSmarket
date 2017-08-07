@@ -18,8 +18,12 @@
 .sell__steps {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: 45px 0 0;
+
+  @include mediaquery("tablet") {
+    flex-direction: row;
+  }
 }
 
 .steps__action {
@@ -30,19 +34,27 @@
   position: relative;
 
   &:first-of-type {
-    padding: 0 25px 0 0;
+    padding: 0;
 
-    .steps__overlay {
+    @include mediaquery("tablet") {
       padding: 0 25px 0 0;
+
+      .steps__overlay {
+        padding: 0 25px 0 0;
+      }
     }
   }
 
   &:last-of-type {
-    padding: 0 0 0 25px;
-    border-left: 1px solid map-get($color, "light-grey");
+    padding: 25px 0 0;
 
-    .steps__overlay {
+    @include mediaquery("tablet") {
+      border-left: 1px solid map-get($color, "light-grey");
       padding: 0 0 0 25px;
+
+      .steps__overlay {
+        padding: 0 0 0 25px;
+      }
     }
   }
 

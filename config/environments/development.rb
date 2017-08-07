@@ -41,11 +41,9 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = false
-
-  # Suppress logger output for asset requests.
   config.assets.quiet = true
-
   config.assets.compile = true
+  config.assets.digest = false
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

@@ -43,14 +43,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def search
-    if params[:q].nil?
-      @posts = []
-    else
-      @posts = Post.search params[:q]
-    end
-  end
-
   private
     def post_params
       params.require(:post).permit :title, :content, :categories, :price, :image, :file, :license

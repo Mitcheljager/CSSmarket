@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   resources :posts
   get "/category/:name" => "posts#category", as: "post_category"
 
-  get "search", to: "posts#search"
-
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"

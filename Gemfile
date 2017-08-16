@@ -19,9 +19,6 @@ gem "bcrypt", git: "https://github.com/codahale/bcrypt-ruby.git", :require => "b
 
 gem "high_voltage", "~> 3.0.0"
 
-gem "elasticsearch-model"
-gem "elasticsearch-rails"
-
 gem "stripe"
 
 gem "carrierwave", github: "carrierwaveuploader/carrierwave"
